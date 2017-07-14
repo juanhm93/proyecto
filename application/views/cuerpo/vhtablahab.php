@@ -5,27 +5,24 @@
 	<!--link rel="stylesheet" title="Principal-Aplicaciones" type="text/css" href="main-aplicacion.css" /-->
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/home_style.css">
-	<!--DataTable-->
-	<link rel="stylesheet" type="text/css" href="<?= base_url()?>css/jquery.dataTables.min.css">
-
-	<style type="text/css">
-		
-		div.dataTables_wrapper {
-        width: "45%";
+	<link rel="stylesheet" type="text/css" href="<?= base_url()?>css/jquery.dataTables.min.svh.css">
+	 <style type="text/css">
+	 	
+	 	div.dataTables_wrapper {
+        width: 500px;
         margin: 0 auto;
     }
-	</style>
-	
-	<script type="text/javascript" src="<?= base_url()?>js/jquery-1.12.4.js" ></script>
-	<script type="text/javascript" src="<?= base_url()?>js/jquery.dataTables.min.js" ></script>
-	<script type="text/javascript" >
-		
+	 </style>
+	<script type="text/javascript" src="<?= base_url()?>js/jquery-svh.js"></script>
+	<script type="text/javascript" src="<?= base_url()?>js/jquery.dataTables.min.svh.js"></script>
+	<script type="text/javascript" class="init">
 		$(document).ready(function() {
-		    $('#example').DataTable( {
-		        "scrollY": 200,
-		        "scrollX": true
-		    } );
-		} );	
+    $('#example').DataTable( {
+        "scrollY": 120,
+        "scrollX": true
+    	} );
+	} );
 	</script>
+	
 </head>
 <body>

@@ -64,5 +64,4 @@ class Mcargando extends CI_model
 	}
 
 
-
 }

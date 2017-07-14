@@ -14,6 +14,9 @@ class Chabilitadora extends CI_controller
 
     public function Excelhab()
     {
+         $moneda = $this->input->post('moneda');
+        $anho = $this->input->post('anho');
+
 
       //  $ele = false;
         $contador = 0;
@@ -150,6 +153,26 @@ class Chabilitadora extends CI_controller
                                     } 
                                     if($ele){
                                         
+                                        
+                                         $costoID =  $this->elementc->costosid($gerencia_ele_costo); 
+
+                                         $gereID  = $this->get_id->getmax_number_gere();
+
+                                         $this->elementc->gerenciando($gereID);
+
+                                         $conca = "$aux$gerencia_ele_costo";
+                                         echo $conca;
+
+                                         $hab = array('idgerencia' =>  $gereID, 
+                                                            'descriphab'=> $conca,
+                                                         'idelementoc' => $costoID,
+                                                            );
+                                        
+
+                                        $this->excel_data_insert_model->habilitador($hab);
+
+                                        $habID = $this->get_id->getmax_number_hab(); 
+
                                         $real = array('enero_r' => $real_enero,
                                         'febrero_r'             => $real_febrero,
                                         'marzo_r'               => $real_marzo,
@@ -161,26 +184,15 @@ class Chabilitadora extends CI_controller
                                         'septiembre_r'          => $real_septiembre,
                                         'octubre_r'             => $real_octubre,
                                         'noviembre_r'           => $real_noviembre,
-                                        'diciembre_r'           => $real_diciembre);
+                                        'diciembre_r'           => $real_diciembre,
+                                        'idmoneda'              => $moneda,
+                                        'idhab'                 => $habID,
+                                        'idanho'                => $anho);
 
 
                                         $this->excel_data_insert_model->reales($real);
-                                        $realID = $this->get_id->getmax_number_real();
-
-                                         $costoID =  $this->elementc->costosid($gerencia_ele_costo); 
-
-                                         $gereID  = $this->get_id->getmax_number_gere();
-
-                                         $this->elementc->gerenciando($gereID);
-
-                                         $conca = "$aux$gerencia_ele_costo";
-                                         echo $conca;
-                                         $hab = array('idgerencia' =>  $gereID, 
-                                                            'descriphab'=> $conca,
-                                                         'idelementoc' => $costoID,
-                                                            'idreal' => $realID
-                                                            );
-                                        $this->excel_data_insert_model->habilitador($hab);
+                                        
+                                                                                 
                                     }//fin  else   
                             }//fin $i!=$numrow
                     }//fin for       

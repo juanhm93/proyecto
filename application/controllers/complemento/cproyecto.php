@@ -20,7 +20,8 @@ class Cproyecto extends CI_controller
         $this->load->view('cuerpo/nav');
         $result['categoria'] = $this->mgetproyecto->getcategoria();
         $result['division'] = $this->mgetproyecto->getdivision();
-        $result['distrito'] = $this->mgetproyecto->getdistrito();
+        $result['dom'] = $this->mgetproyecto->getdom();
+        $result['emx'] = $this->mgetproyecto->getemx();
         $result['gereproyecto'] = $this->mgetproyecto->getgereproyecto();
         $this->load->view('vnewproyect',$result);
         $this->load->view('cuerpo/footer');	

@@ -6,13 +6,12 @@ class Consulta extends CI_model
 {
     public function getDatos()
     {
-        $this->db->select('proyecto.titulo , proyecto.renglon ,
-        	categoria.numcategoria , categoria.descripcion,plan.enero_p,plan.febrero_p,plan.marzo_p,plan.abril_p,plan.mayo_p,plan.junio_p,plan.julio_p,plan.agosto_p,plan.septiembre_p,plan.octubre_p,plan.noviembre_p,plan.diciembre_p
-        	,reales.enero_r,reales.febrero_r,reales.marzo_r,reales.abril_r,reales.mayo_r,reales.junio_r,reales.julio_r,reales.agosto_r,reales.septiembre_r,reales.octubre_r,reales.noviembre_r,reales.diciembre_r');
-        $this->db->From('proyecto');
-        $this->db->join('categoria', 'categoria.id=proyecto.idcategoria');
-        $this->db->join('plan', 'plan.idplan=proyecto.idplan');
-        $this->db->join('reales', 'reales.idreal=proyecto.idreal');
+        $this->db->select('pr.titulo , pr.renglon ,
+        	c.numcategoria , c.descripcion,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r');
+        $this->db->From('proyecto pr');
+        $this->db->join('categoria c', 'c.id=pr.idcategoria');
+        $this->db->join('plan p', 'p.idproyecto=pr.idproyecto');
+        $this->db->join('reales r', 'r.idproyecto=pr.idproyecto');
         return $this->db->get();
     }
 

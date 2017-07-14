@@ -17,20 +17,24 @@ class Get_id extends CI_model
 	}
 
 
-	function getmax_number_plan() {
-	    $result = $this->db->select_max('idplan')->get('plan')->result_array();
-	    return (int) $result[0]['idplan'];
+	function getmax_number_pro() {
+	    $result = $this->db->select_max('idproyecto')->get('proyecto')->result_array();
+	    return (int) $result[0]['idproyecto'];
 	}
 
 
-	function getmax_number_real() {
-	    $result = $this->db->select_max('idreal')->get('reales')->result_array();
-	    return (int) $result[0]['idreal'];
+	function getmax_number_hab() {
+	    $result = $this->db->select_max('idhab')->get('habilitadora')->result_array();
+	    return (int) $result[0]['idhab'];
+	}
+	function getmax_number_habelec() {
+	    $result = $this->db->select_max('idhabelec')->get('habelec')->result_array();
+	    return (int) $result[0]['idhabelec'];
 	}
 
-	function getmax_number_labor() {
-	    $result = $this->db->select_max('idlabor')->get('labor')->result_array();
-	    return (int) $result[0]['idlabor'];
+	function getmax_number_emx() {
+	    $result = $this->db->select_max('idmixta')->get('mixta')->result_array();
+	    return (int) $result[0]['idmixta'];
 	}
 
 	function getmax_number_bene(){
@@ -54,6 +58,7 @@ class Get_id extends CI_model
 		$result = $this->db->select_max('idgere')->get('gerencia')->result_array();
 	    return (int) $result[0]['idgere'];	
 	}
+
 
 }
 

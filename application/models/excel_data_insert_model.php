@@ -12,30 +12,57 @@ class Excel_data_insert_model extends CI_Model {
 $this->db->insert('user', $data_user);
 
    }*/
- public function categoria($categ){
+   		public function gerencia($g){
 
- 	$this->db->insert('categoria',$categ);
- }  
- public function plan($planproyec){
+   			$this->db->insert('gerencia',$g);
+   		}
+		 public function categoria($categ){
 
- 	$this->db->insert('plan',$planproyec);
+		 	$this->db->insert('categoria',$categ);
+		 }  
+		 public function plan($planproyec){
 
- }
- public function reales($realesvar){
+		 	$this->db->insert('plan',$planproyec);
 
- 	$this->db->insert('reales',$realesvar);
- }
+		 }
+		 public function reales($realesvar){
 
- public function proyectos($proyec){
+		 	$this->db->insert('reales',$realesvar);
+		 }
+		 public function realesupdate($id,$reales){
 
- 	$this->db->insert('proyecto',$proyec);
- }
+		 	$this->db->where('idproyecto',$id);
+		 	$this->db->update('reales',$reales);
+		 }
 
- public function habilitador($hab){
+		 public function proyectos($proyec){
 
- 	$this->db->insert('habilitadora',$hab);
- 	
- }
+		 	$this->db->insert('proyecto',$proyec);
+		 }
+
+		 public function habilitador($hab){
+
+		 	$this->db->insert('habilitadora',$hab);
+		 }
+		  public function udphabilitador($id,$hab){
+
+		  	$this->db->where('idhab',$id);
+		 	$this->db->update('habilitadora',$hab);
+		 }
+		 public function inserthabilitadora($hab){
+
+		 	$this->db->insert('habelec',$hab);
+
+		 }
+		 public function mixtas($mix){
+		 	$this->db->insert('mixta',$mix);	
+		 }
+		 
+		  public function updatereal($id,$reales){
+
+		  	$this->db->where('idreal',$id);
+		 	$this->db->update('reales',$reales);
+		 }
 
 	
 }

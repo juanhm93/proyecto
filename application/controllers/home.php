@@ -9,6 +9,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->model('fecha');
+        $this->load->model('memproyecto');
     }
         
     public function index()
@@ -18,7 +19,8 @@ class Home extends CI_Controller
         $this->load->view('cuerpo/head');
         $this->load->view('cuerpo/header');
         $this->load->view('cuerpo/nav');
-        $this->load->view('cuerpo/contenido');
+        $result['moneda'] = $this->memproyecto->getmoneda();
+        $this->load->view('cuerpo/contenido', $result);
         $this->load->view('cuerpo/footer');
     }
 }

@@ -20,9 +20,16 @@ class Mgetproyecto extends CI_model
 		return $query->result_array(); 
 	}
 
-	public function getdistrito(){
+	public function getdom(){
 		$this->db->select('*');
-		$query = $this->db->get('distrito');
+		$query = $this->db->get('dom');
+		return $query->result_array();
+
+	}
+	public function getemx(){
+
+		$this->db->select('*');
+		$query = $this->db->get('emx');
 		return $query->result_array();
 
 	}

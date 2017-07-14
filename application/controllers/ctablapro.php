@@ -16,10 +16,9 @@ class Ctablapro extends CI_Controller
     {
         
 
-        $this->load->view('cuerpo/vhtablahab');
+        $this->load->view('cuerpo/head');
         $this->load->view('cuerpo/header');
         $this->load->view('cuerpo/nav');
-        
         $result = $this->consulta->getDatos();
         $data   = array('consulta' => $result);
         $this->load->view("tabla", $data);

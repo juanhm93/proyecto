@@ -10,19 +10,21 @@ class Ctablahab extends CI_Controller
         parent::__construct();
         $this->load->model('Consulta');
         $this->load->model('fecha');
+        $this->load->model('mtablahab');
+        $this->load-> model('memproyecto');
 
     }
     public function index()
     {
-        $this->load->model('mtablahab');
+        
 
-        $this->load->view('cuerpo/vhtablahab');
+        $this->load->view('cuerpo/head');
         $this->load->view('cuerpo/header');
         $this->load->view('cuerpo/nav');
-        
-        $result = $this->mtablahab->getDatoshab();
-        $data   = array('habilitadora' => $result);
-        $this->load->view("vctablahab", $data);
+        //$result = $this->mtablahab->getDatoshab();
+        //$data   = array('habilitadora' => $result);
+        //$result['moneda'] = $this->memproyecto->getmoneda();
+        $this->load->view("vctablahab");
 
         $this->load->view('cuerpo/footer');	
  

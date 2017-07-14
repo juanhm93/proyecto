@@ -24,6 +24,8 @@ class Obtenerfile extends CI_Controller
 
     public function Excel()
     {
+        $moneda = $this->input->post('moneda');
+        $anho = $this->input->post('anho');
 
         $nametmp  = $_FILES["excel"]["tmp_name"];
         $filename = $_FILES["excel"]["name"];
@@ -137,6 +139,25 @@ class Obtenerfile extends CI_Controller
                         'descripcion'                          => $nombreCategoria,
                     );
 
+                    
+                    //condicional para evitar cargar en la base de datos categorias con el mismo nombre
+                    if ($verificacion == true) {
+                        $this->excel_data_insert_model->categoria($datoscategoria);
+                        $verificacion = false;
+                    }
+
+
+                    $categoriaID = $this->get_id->getmax_number_Categoria();
+
+
+                    $proyecto = array('renglon' => $renglon,
+                        'titulo'                    => $titulo,
+                        'idcategoria'               => $categoriaID);
+
+                    $this->excel_data_insert_model->proyectos($proyecto);
+
+                    $proyectoID = $this->get_id->getmax_number_pro(); 
+
                     // maravilloso corazon - rafael buscar
                     $planproyecto = array('enero_p' => $plan_enero,
                         'febrero_p'                     => $plan_febrero,
@@ -149,7 +170,10 @@ class Obtenerfile extends CI_Controller
                         'septiembre_p'                  => $plan_septiembre,
                         'octubre_p'                     => $plan_octubre,
                         'noviembre_p'                   => $plan_noviembre,
-                        'diciembre_p'                   => $plan_diciembre);
+                        'diciembre_p'                   => $plan_diciembre,
+                        'idmoneda'                      => $moneda,
+                        'idproyecto'                    => $proyectoID,
+                        'idanho'                        => $anho);
 
                     $realproyecto = array('enero_r' => $real_enero,
                         'febrero_r'                     => $real_febrero,
@@ -162,28 +186,15 @@ class Obtenerfile extends CI_Controller
                         'septiembre_r'                  => $real_septiembre,
                         'octubre_r'                     => $real_octubre,
                         'noviembre_r'                   => $real_noviembre,
-                        'diciembre_r'                   => $real_diciembre);
+                        'diciembre_r'                   => $real_diciembre,
+                        'idmoneda'                      => $moneda,
+                        'idproyecto'                    => $proyectoID,
+                        'idanho'                        => $anho);
 
-                    //condicional para evitar cargar en la base de datos categorias con el mismo nombre
-                    if ($verificacion == true) {
-                        $this->excel_data_insert_model->categoria($datoscategoria);
-                        $verificacion = false;
-                    }
+
+
                     $this->excel_data_insert_model->plan($planproyecto);
                     $this->excel_data_insert_model->reales($realproyecto);
-
-                    
-                    $categoriaID = $this->get_id->getmax_number_Categoria();
-                    $planID      = $this->get_id->getmax_number_plan();
-                    $realID      = $this->get_id->getmax_number_real();
-
-                    $proyecto = array('renglon' => $renglon,
-                        'titulo'                    => $titulo,
-                        'idplan'                    => $planID,
-                        'idreal'                    => $realID,
-                        'idcategoria'               => $categoriaID);
-
-                    $this->excel_data_insert_model->proyectos($proyecto);
                    
                 } else {
 
@@ -199,3 +210,7 @@ class Obtenerfile extends CI_Controller
 
     } //fin class public excel
 }
+?><script>
+                window.alert('Se ha importaron las categorias correctamente');
+                window.location= '<?= //base_url()?>pro/cimportarcat';
+            </script> <?php  

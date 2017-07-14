@@ -1,76 +1,67 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<div class="mos-tab">
+						<h4>  proyectos de inversion esfuerzo propios</h4>
+						 
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
-							<h4>  proyectos de inversion esfuerzo propios</h4>
-							
-							<table id="example" style="font-family:courier; font-size: 11px;" class="display nowrap" cellspacing="1" width="100%">
+							<table id="example" class="display nowrap" cellspacing="0" width="100%">
 
 								<thead>
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td colspan="2" align="center">Enero</td>
-										<td colspan="2" align="center">Febrero</td>
-										<td colspan="2" align="center">Marzo</td>
-										<td colspan="2" align="center">Abril</td>
-										<td colspan="2" align="center">Mayo</td>
-										<td colspan="2" align="center">Junio</td>
-										<td colspan="2" align="center">Julio</td>
-										<td colspan="2" align="center">Agosto</td>
-										<td colspan="2" align="center">Septiembre</td>
-										<td colspan="2" align="center">Octubre</td>
-										<td colspan="2" align="center">Noviembre</td>
-										<td colspan="2" align="center">Diciembre</td>
 										
-										
-										
-										
-										
+										<th></th>
+										<th></th>
+										<th></th>
+										<th colspan="2" align="center">Enero</th>
+										<th colspan="2" align="center">Febrero</th>
+										<th colspan="2" align="center">Marzo</th>
+										<th colspan="2" align="center">Abril</th>
+										<th colspan="2" align="center">Mayo</th>
+										<th colspan="2" align="center">Junio</th>
+										<th colspan="2" align="center">Julio</th>
+										<th colspan="2" align="center">Agosto</th>
+										<th colspan="2" align="center">Septiembre</th>
+										<th colspan="2" align="center">Octubre</th>
+										<th colspan="2" align="center">Noviembre</th>
+										<th colspan="2" align="center">Diciembre</th>
 									</tr>
 									<tr>
-										<td>Numero</td>
-										<td>Categoria</td>
-										<td>Renglon</td>
-										<td>Titulo</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
-										<td>Plan</td>
-										<td>Real</td>
+										<th >Categoria</th>
+										<th >Renglon</th>
+										<th >Titulo</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
+										<th >Plan</th>
+										<th >Real</th>
 									</tr>
-								
 								</thead>
+									<tbody>
 								<?php
+
 								foreach ($consulta->result() as $fila) {
 									?>
-
-									<tbody>
 										<tr>
-											<td><?= $fila->numcategoria?></td>
-											<td><?= $fila->descripcion ?></td>
+											<td><?= $fila->numcategoria." ".$fila->descripcion ?></td>
 											<td><?= $fila->renglon ?></td>
-											<td><?= $fila->titulo ?></td>
+											<td class="titulotd"><?= $fila->titulo ?></td>
 											<td><?= $fila->enero_p ?></td>
 											<td><?= $fila->enero_r ?></td>
 											<td><?= $fila->febrero_p ?></td>
@@ -96,12 +87,14 @@
 											<td><?= $fila->diciembre_p ?></td>
 											<td><?= $fila->diciembre_r ?></td>
 										</tr>
-									</tbody>
+									
+									
 									<?php }
 									?><!--fin foreach-->
+									</tbody>
 								</table>
 							
-						</div>
+					 
 					</div>
 
 

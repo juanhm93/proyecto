@@ -9,6 +9,7 @@ class Chab extends CI_Controller
     {
         parent::__construct();
         $this->load->model('fecha');
+        $this->load->model('memproyecto');
     }
         
     public function index()
@@ -18,7 +19,7 @@ class Chab extends CI_Controller
         $this->load->view('cuerpo/head');
         $this->load->view('cuerpo/header');
         $this->load->view('cuerpo/nav');
-        $this->load->view('cuerpo/vhab');
+        $this->load->view('habilitadora/vpahabp');
         $this->load->view('cuerpo/footer');
     }
 }
