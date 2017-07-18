@@ -147,11 +147,14 @@ class Cmostarm extends CI_Controller
 
 	}
 
-	public function ajaxgestioninv(){
+	
+	
+	public function ajaxgiequiv(){
 
 		$anho = $this->input->post('v3');
-		$mon = 1;
-	$resultado	= $this->mtablahab->gestioninv($anho,$mon);
+		$mon = $this->input->post('v2');
+		
+	$resultado	= $this->mtablahab->gestioninv($anho,);
 
 			$arr = array();
 			$i=0;

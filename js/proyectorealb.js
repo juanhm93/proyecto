@@ -1,9 +1,8 @@
 var x;
-
 x = $(document);
-x.ready(p);
+x.ready(proyectorealb);
 	
-function p() {
+function proyectorealb() {
 	 
 	var x = $("#anhoproyectoi");
 	
@@ -67,7 +66,7 @@ function p() {
 
 									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
                         			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
+										aux = datos[i]['descripcion'];
 										i--;
                         				
                         			}else{

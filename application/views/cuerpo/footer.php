@@ -8,13 +8,10 @@
 	<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?= base_url()?>js/validar.js"></script>
     <script type="text/javascript" src="<?= base_url()?>js/script.js"></script>  
-      <script type="text/javascript" src="<?= base_url()?>js/gestioninv.js"></script> 
       <script type="text/javascript" src="<?= base_url()?>js/tabs.js"></script> 
-      <script type="text/javascript" src="<?= base_url()?>js/ginvdolares.js"></script> 
-      <script type="text/javascript" src="<?= base_url()?>js/gesinvhabplanb.js"></script>
-       <script type="text/javascript" src="<?= base_url()?>js/gesinvhabpland.js"></script>
-       <script type="text/javascript" src="<?= base_url()?>js/proyectorealb.js"></script>
-        
+       <script type="text/javascript" src="<?= base_url()?>js/mostrarpro.js"></script>
+       <script type="text/javascript" src="<?= base_url()?>js/mostrarhabgestioninv.js"></script>
+
         
 	<script language="javascript" type="text/javascript">  
 

@@ -31,9 +31,69 @@ class Mhabrep extends CI_Model
 	 	$this->db->join('habelec hab','h.idhab = hab.idhabfk');
 	 	$this->db->join('reales r','hab.idhabelec=r.idhab');
 	 	$this->db->join('moneda m','r.idmoneda=m.idmoneda');
+	 	$this->db->where('h.idtipo_IO',1);
 	 	$this->db->where('h.tipodivfk',5);
 	 	$this->db->order_by('idhabfk','asc');
 	 	 $query = $this->db->get();
 	 	 return $query->result_array();
 	 }
+
+	  public function dttoriental(){
+	 	$this->db->select('r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r,m.siglasm,hab.idelecfk');
+	 	$this->db->from('habilitadora h');
+	 	$this->db->join('gerencia g','h.idgerencia=g.idgere');
+	 	$this->db->join('habelec hab','h.idhab = hab.idhabfk');
+	 	$this->db->join('reales r','hab.idhabelec=r.idhab');
+	 	$this->db->join('moneda m','r.idmoneda=m.idmoneda');
+	 	$this->db->where('h.idtipo_IO',1);
+	 	$this->db->where('h.tipodivfk',4);
+	 	$this->db->order_by('idhabfk','asc');
+	 	 $query = $this->db->get();
+	 	 return $query->result_array();
+	 }
+
+	  public function divoccidental(){
+	 	$this->db->select('r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r,m.siglasm,hab.idelecfk');
+	 	$this->db->from('habilitadora h');
+	 	$this->db->join('gerencia g','h.idgerencia=g.idgere');
+	 	$this->db->join('habelec hab','h.idhab = hab.idhabfk');
+	 	$this->db->join('reales r','hab.idhabelec=r.idhab');
+	 	$this->db->join('moneda m','r.idmoneda=m.idmoneda');
+	 	$this->db->where('h.idtipo_IO',1);
+	 	$this->db->where('h.tipodivfk',3);
+	 	$this->db->order_by('idhabfk','asc');
+	 	 $query = $this->db->get();
+	 	 return $query->result_array();
+	 }
+
+	  public function divoriental(){
+	 	$this->db->select('r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r,m.siglasm,hab.idelecfk');
+	 	$this->db->from('habilitadora h');
+	 	$this->db->join('gerencia g','h.idgerencia=g.idgere');
+	 	$this->db->join('habelec hab','h.idhab = hab.idhabfk');
+	 	$this->db->join('reales r','hab.idhabelec=r.idhab');
+	 	$this->db->join('moneda m','r.idmoneda=m.idmoneda');
+	 	$this->db->where('h.idtipo_IO',1);
+	 	$this->db->where('h.tipodivfk',2);
+	 	$this->db->order_by('idhabfk','asc');
+	 	 $query = $this->db->get();
+	 	 return $query->result_array();
+	 }
+
+	  public function direcejecutivaep(){
+	 	$this->db->select('r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r,m.siglasm,hab.idelecfk');
+	 	$this->db->from('habilitadora h');
+	 	$this->db->join('gerencia g','h.idgerencia=g.idgere');
+	 	$this->db->join('habelec hab','h.idhab = hab.idhabfk');
+	 	$this->db->join('reales r','hab.idhabelec=r.idhab');
+	 	$this->db->join('moneda m','r.idmoneda=m.idmoneda');
+	 	$this->db->where('h.idtipo_IO',1);
+	 	$this->db->where('h.tipodivfk',1);
+	 	$this->db->order_by('idhabfk','asc');
+	 	 $query = $this->db->get();
+	 	 return $query->result_array();
+	 }
+
+
+
 }

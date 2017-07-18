@@ -23,7 +23,8 @@
 			<!--esta opcion del menu es para cargar manual la opcion de las habilitadora-->
 			<li><a href="" ><span class="Text-menu" >actualizar Real </span></a></li>
 			<li><a href="" ><span class="Text-menu" > Mejor Vision </span></a></li>
-			<li><a href="<?= base_url()?>ctablahab" ><span class="Text-menu" > Mostrar </span></a></li>
+			<li><a href="<?= base_url()?>ctablahab" ><span class="Text-menu" > Gestion Inversion </span></a></li>
+			<li><a href="<?= base_url()?>ctablahab" ><span class="Text-menu" > Operaciones </span></a></li>
 		</ul>
 		</li>
 		<li class='has-sub'><a href=""  class="accordion"><span class="Text-menu" >  Insertar nuevo </span></a>
@@ -38,6 +39,8 @@
 			</li>
 			<li><a href="<?= base_url()?>em/cemproyecto" ><span class="Text-menu" > Proyectos EM </span></a></li>
 		<li><a href="<?= base_url()?>cmixtas" ><span class="Text-menu" > input mixtas </span></a></li>
+		<li><a href="<?= base_url()?>dir/cdirejep" ><span class="Text-menu" > DIR EJECUTIVA EP </span></a></li>
+
 		<li><a href="<?= base_url()?>habilitadora/chabopm" ><span class="Text-menu" > habilitadora </span></a></li>
 		<li><a href="<?= base_url()?>consumarinf/cinfgere" ><span class="Text-menu" > completar gerencia</span></a></li>
 		<li><a href="<?= base_url()?>consumarinf/csiglasgere" ><span class="Text-menu" > gerencia siglas</span></a></li>
