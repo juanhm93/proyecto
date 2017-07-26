@@ -3,7 +3,7 @@
 					<h2>Direccion ejecutiva - EP </h2>
 				 
 					<div class="form-proyecto">
-					<form class="form-horizontal" action="<?= base_url()?>habilitadora/poshab" method="post">
+					<form class="form-horizontal" action="<?= base_url()?>cdirejep/postdireccion" method="post">
 							 
 							 <div class="form-group select_container">
 									
@@ -12,6 +12,18 @@
 										  <option value="">--seleccionar Opcion--</option>
 										  <option value="1">Plan</option>
 										  <option value="2">Real</option>
+										  <option value="3">Mejor Vision</option>
+										  <option value="4">Anteproyecto</option>
+										</select>
+								</div>	
+
+								<div class="form-group select_container">
+									
+								<div for="invop" class="select_title">Tipo</div>
+										<select class="select-select" name="invop" id="invop" >
+										  <option value="">--seleccionar Opcion--</option>
+										  <option value="1">Inversiones</option>
+										  <option value="2">Operaciones</option>
 										</select>
 								</div>	
 
@@ -26,6 +38,8 @@
 											<?php  } ?>
 										</select>
 							</div>
+
+
 							<div class="form-group select_container" >
 										<div for="anhodir" class="select_title">año</div>		
 										<select class="select-select" id="anhodir" name="anhodir"  >
@@ -35,7 +49,7 @@
 											<?php } ?> 	
 										</select>
 							</div>
-							<div id="tablamixta" style="overflow-x: auto;" >
+							<div id="direccion" style="overflow-x: auto;" >
 							</div>
 							<button type="submit" id="buscarvalor" class="btn btn-danger">guardar</button>
 							</form>

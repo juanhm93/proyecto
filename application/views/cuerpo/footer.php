@@ -9,10 +9,47 @@
 	<script type="text/javascript" src="<?= base_url()?>js/validar.js"></script>
     <script type="text/javascript" src="<?= base_url()?>js/script.js"></script>  
       <script type="text/javascript" src="<?= base_url()?>js/tabs.js"></script> 
-       <script type="text/javascript" src="<?= base_url()?>js/mostrarpro.js"></script>
-       <script type="text/javascript" src="<?= base_url()?>js/mostrarhabgestioninv.js"></script>
-
-        
+       <?php 
+         if ($this->uri->segment(1) == "pro"){
+         ?> <script type="text/javascript" src="<?= base_url()?>js/mostrarpro.js"></script>
+        <?php
+         }   
+        ?>
+       <?php 
+         if ($this->uri->segment(1) == "ctablahab"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/mostrarhabgestioninv.js"></script>
+         <?php
+         }   ?>
+          <?php
+        if ($this->uri->segment(1) == "coperahab"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/mostrarhaboperaciones.js"></script>
+         <?php
+         }   
+        ?>
+          <?php
+        if ($this->uri->segment(1) == "cdirejep"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/cargardirejeca.js"></script>
+         <?php
+         }   
+        ?>
+          <?php
+        if ($this->uri->segment(1) == "cgesinv"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/gestioninversion.js"></script>
+         <?php
+         }   
+        ?>
+           <?php
+        if ($this->uri->segment(1) == "coperaciones"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/operacionesep.js"></script>
+         <?php
+         }   
+        ?>
+         <?php
+        if ($this->uri->segment(1) == "cepdivoriental"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/epdivoriental.js"></script>
+         <?php
+         }   
+        ?>
 	<script language="javascript" type="text/javascript">  
 
 $(document).ready(function(){
@@ -31,10 +68,6 @@ var enero = [
     {display: "Octubre", value: "octubre" },
     {display: "Noviembre", value: "noviembre" },
     {display: "Diciembre", value: "diciembre" }];
-
-
- 
-
 
 
 $('input[type=checkbox]').change(function(){

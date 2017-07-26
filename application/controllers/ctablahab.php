@@ -23,11 +23,7 @@ class Ctablahab extends CI_Controller
         $this->load->view('cuerpo/head');
         $this->load->view('cuerpo/header');
         $this->load->view('cuerpo/nav');
-        //$result = $this->mtablahab->getDatoshab();
-        //$data   = array('habilitadora' => $result);
-        //$result['moneda'] = $this->memproyecto->getmoneda();
         $this->load->view("vctablahab");
-
         $this->load->view('cuerpo/footer');	
  
     }
@@ -36,8 +32,8 @@ class Ctablahab extends CI_Controller
 
         $anho = $this->input->post('v3');
         $mon = $this->input->post('v2');
-
-    $resultado  = $this->mtablahab->planh($anho,$mon);
+        $inv = $this->input->post('v1');
+    $resultado  = $this->mtablahab->planh($anho,$mon,$inv);
 
             $arr = array();
             $i=0;
@@ -66,17 +62,20 @@ class Ctablahab extends CI_Controller
      public function gesinvpequiv(){
 
         $anho = $this->input->post('v3');
-        $mon = $this->input->post('v2');
+    $inv = $this->input->post('v1');
 
-    $resultado  = $this->mtablahab->planhequiv($anho);
+    $resultado  = $this->mtablahab->planhequiv($anho,$inv);
 
             $arr = array();
             $i=0;
 
             foreach ($resultado->result() as $value){
-                    
+
                     $arr[$i]['idmoneda'] = $value->idmoneda;
-                    $arr[$i]['idhab'] = $value->idhab;
+                    $arr[$i]['idhabfk'] = $value->idhabfk;
+                     $arr[$i]['idhab'] = $value->idhab;
+                    $arr[$i]['idelecfk'] = $value->idelecfk;
+                    $arr[$i]['idmoneda'] = $value->idmoneda;
                     $arr[$i]['gerehab'] = $value->gerehab;
                     $arr[$i]['elemento'] = $value->elemento;
                     $arr[$i]['enero_p'] = $value->enero_p; 
@@ -101,8 +100,8 @@ class Ctablahab extends CI_Controller
 
         $anho = $this->input->post('v3');
         $mon = $this->input->post('v2');
-
-    $resultado  = $this->mtablahab->gestioninv($anho,$mon);
+    $inv = $this->input->post('v1');
+    $resultado  = $this->mtablahab->gestioninv($anho,$mon,$inv);
 
             $arr = array();
             $i=0;
@@ -123,6 +122,146 @@ class Ctablahab extends CI_Controller
                     $arr[$i]['octubre_r']=$value->octubre_r;                 
                     $arr[$i]['noviembre_r']=$value->noviembre_r; 
                     $arr[$i]['diciembre_r']=$value->diciembre_r;
+                    $i++;
+            }
+            echo json_encode($arr);
+
+    }
+
+    public function gesinvreal(){
+
+             $anho = $this->input->post('v3');
+             $mon = $this->input->post('v2');
+    $inv = $this->input->post('v1');
+
+        $resultado  = $this->mtablahab->gestioninv($anho,$mon,$inv);
+
+            $arr = array();
+            $i=0;
+
+            foreach ($resultado->result() as $value){
+                    
+                    $arr[$i]['gerehab'] = $value->gerehab;
+                    $arr[$i]['elemento'] = $value->elemento;
+                    $arr[$i]['enero_r'] = $value->enero_r; 
+                    $arr[$i]['febrero_r']=$value->febrero_r; 
+                    $arr[$i]['marzo_r']=$value->marzo_r; 
+                    $arr[$i]['abril_r']=$value->abril_r; 
+                    $arr[$i]['mayo_r']=$value->mayo_r; 
+                    $arr[$i]['junio_r']=$value->junio_r; 
+                    $arr[$i]['julio_r']=$value->julio_r; 
+                    $arr[$i]['agosto_r']=$value->agosto_r; 
+                    $arr[$i]['septiembre_r']=$value->septiembre_r; 
+                    $arr[$i]['octubre_r']=$value->octubre_r;                 
+                    $arr[$i]['noviembre_r']=$value->noviembre_r; 
+                    $arr[$i]['diciembre_r']=$value->diciembre_r;
+                    $i++;
+            }
+            echo json_encode($arr);
+
+
+    }
+    public function gesinvrealequiv(){
+
+
+         $anho = $this->input->post('v3');
+        $inv = $this->input->post('v1');
+
+    $resultado  = $this->mtablahab->gestioninvequv($anho,$inv);
+
+            $arr = array();
+            $i=0;
+
+            foreach ($resultado->result() as $value){
+                    
+                    $arr[$i]['idmoneda'] = $value->idmoneda;
+                    $arr[$i]['idhabfk'] = $value->idhabfk;
+                     $arr[$i]['idhab'] = $value->idhab;
+                    $arr[$i]['idelecfk'] = $value->idelecfk;
+                    $arr[$i]['gerehab'] = $value->gerehab;
+                    $arr[$i]['elemento'] = $value->elemento;
+                    $arr[$i]['enero_r'] = $value->enero_r; 
+                    $arr[$i]['febrero_r']=$value->febrero_r; 
+                    $arr[$i]['marzo_r']=$value->marzo_r; 
+                    $arr[$i]['abril_r']=$value->abril_r; 
+                    $arr[$i]['mayo_r']=$value->mayo_r; 
+                    $arr[$i]['junio_r']=$value->junio_r; 
+                    $arr[$i]['julio_r']=$value->julio_r; 
+                    $arr[$i]['agosto_r']=$value->agosto_r; 
+                    $arr[$i]['septiembre_r']=$value->septiembre_r; 
+                    $arr[$i]['octubre_r']=$value->octubre_r;                 
+                    $arr[$i]['noviembre_r']=$value->noviembre_r; 
+                    $arr[$i]['diciembre_r']=$value->diciembre_r;
+                    $i++;
+            }
+            echo json_encode($arr);
+
+    }
+
+    public function gesinvmv(){
+
+            $anho = $this->input->post('v3');
+             $mon = $this->input->post('v2');
+        $inv = $this->input->post('v1');
+
+        $resultado  = $this->mtablahab->gestioninvmv($anho,$mon,$inv);
+
+            $arr = array();
+            $i=0;
+
+            foreach ($resultado->result() as $value){
+                    
+                    $arr[$i]['gerehab'] = $value->gerehab;
+                    $arr[$i]['elemento'] = $value->elemento;
+                    $arr[$i]['enero_mv'] = $value->enero_mv; 
+                    $arr[$i]['febrero_mv']=$value->febrero_mv; 
+                    $arr[$i]['marzo_mv']=$value->marzo_mv; 
+                    $arr[$i]['abril_mv']=$value->abril_mv; 
+                    $arr[$i]['mayo_mv']=$value->mayo_mv; 
+                    $arr[$i]['junio_mv']=$value->junio_mv; 
+                    $arr[$i]['julio_mv']=$value->julio_mv; 
+                    $arr[$i]['agosto_mv']=$value->agosto_mv; 
+                    $arr[$i]['septiembre_mv']=$value->septiembre_mv; 
+                    $arr[$i]['octubre_mv']=$value->octubre_mv;                 
+                    $arr[$i]['noviembre_mv']=$value->noviembre_mv; 
+                    $arr[$i]['diciembre_mv']=$value->diciembre_mv;
+                    $i++;
+            }
+            echo json_encode($arr);
+
+    }
+
+    public function gesinvmvequiv(){
+
+
+          $anho = $this->input->post('v3');
+               $inv = $this->input->post('v1');
+
+    $resultado  = $this->mtablahab->gestioninvmvequiv($anho,$inv);
+
+            $arr = array();
+            $i=0;
+
+            foreach ($resultado->result() as $value){
+                    
+                    $arr[$i]['idmoneda'] = $value->idmoneda;
+                    $arr[$i]['idhabfk'] = $value->idhabfk;
+                     $arr[$i]['idhab'] = $value->idhab;
+                    $arr[$i]['idelecfk'] = $value->idelecfk;
+                    $arr[$i]['gerehab'] = $value->gerehab;
+                    $arr[$i]['elemento'] = $value->elemento;
+                    $arr[$i]['enero_mv'] = $value->enero_mv; 
+                    $arr[$i]['febrero_mv']=$value->febrero_mv; 
+                    $arr[$i]['marzo_mv']=$value->marzo_mv; 
+                    $arr[$i]['abril_mv']=$value->abril_mv; 
+                    $arr[$i]['mayo_mv']=$value->mayo_mv; 
+                    $arr[$i]['junio_mv']=$value->junio_mv; 
+                    $arr[$i]['julio_mv']=$value->julio_mv; 
+                    $arr[$i]['agosto_mv']=$value->agosto_mv; 
+                    $arr[$i]['septiembre_mv']=$value->septiembre_mv; 
+                    $arr[$i]['octubre_mv']=$value->octubre_mv;                 
+                    $arr[$i]['noviembre_mv']=$value->noviembre_mv; 
+                    $arr[$i]['diciembre_mv']=$value->diciembre_mv;
                     $i++;
             }
             echo json_encode($arr);

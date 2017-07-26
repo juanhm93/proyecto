@@ -71,3 +71,689 @@
 	<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<table id="p1" class="display nowrap" cellspacing="0" width="100%">
+			<thead>
+				<tr> 
+					<th>REAL</th>
+					<th>Elemento</th>
+					<th>Enero</th>
+					<th>Febrero</th>
+					<th>Marzo</th>
+					<th>abril</th>
+					<th>Mayo</th>
+					<th>Junio</th>
+					<th>Julio</th>
+					<th>Agosto</th>
+					<th>Septiembre</th>
+					<th>Octubre</th>
+					<th>Noviembre</th>
+					<th>Diciembre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td class="y-header">DIRECCION EJECUTIVA COSTA AFUERA</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td class="red-header">  </td>
+					<td class="red-header">DESCRIPCION</td>
+					<td class="red-header">ENE</td>
+					<td class="red-header">FEB</td>
+					<td class="red-header">MAR</td>
+					<td class="red-header">ABR</td>
+					<td class="red-header">MAY</td>
+					<td class="red-header">JUN</td>
+					<td class="red-header">JUL</td>
+					<td class="red-header">AGO</td>
+					<td class="red-header">SEP</td>
+					<td class="red-header">OCT</td>
+					<td class="red-header">NOV</td>
+					<td class="red-header">DIC</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Labor</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+				<td></td>
+					<td>Beneficio y Bienestar</td>
+					 <td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Materiales</td>
+					 <td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Servicios y Contratos</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Otros</td>
+					 
+				</tr>
+				<tr>
+					<td></td>
+					<td class="green-header">DIRECCION EJECUTIVA - EP </td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td class="red-header">  </td>
+					<td class="red-header">DESCRIPCION</td>
+					<td class="red-header">ENE</td>
+					<td class="red-header">FEB</td>
+					<td class="red-header">MAR</td>
+					<td class="red-header">ABR</td>
+					<td class="red-header">MAY</td>
+					<td class="red-header">JUN</td>
+					<td class="red-header">JUL</td>
+					<td class="red-header">AGO</td>
+					<td class="red-header">SEP</td>
+					<td class="red-header">OCT</td>
+					<td class="red-header">NOV</td>
+					<td class="red-header">DIC</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Labor</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+				<td></td>
+					<td>Beneficio y Bienestar</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	 
+				</tr>
+				<tr>
+					<td></td>
+					<td>Materiales</td>
+				 <td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Servicios y Contratos</td>
+					 <td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Otros</td>
+					 <td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td class="green-header">DIVISION ORIENTAL</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td class="red-header">  </td>
+					<td class="red-header">DESCRIPCION</td>
+					<td class="red-header">ENE</td>
+					<td class="red-header">FEB</td>
+					<td class="red-header">MAR</td>
+					<td class="red-header">ABR</td>
+					<td class="red-header">MAY</td>
+					<td class="red-header">JUN</td>
+					<td class="red-header">JUL</td>
+					<td class="red-header">AGO</td>
+					<td class="red-header">SEP</td>
+					<td class="red-header">OCT</td>
+					<td class="red-header">NOV</td>
+					<td class="red-header">DIC</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Labor</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+				<td></td>
+					<td>Beneficio y Bienestar</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Materiales</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Servicios y Contratos</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Otros</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td class="green-header">DIVISION OCCIDENTAL</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td class="red-header">  </td>
+					<td class="red-header">DESCRIPCION</td>
+					<td class="red-header">ENE</td>
+					<td class="red-header">FEB</td>
+					<td class="red-header">MAR</td>
+					<td class="red-header">ABR</td>
+					<td class="red-header">MAY</td>
+					<td class="red-header">JUN</td>
+					<td class="red-header">JUL</td>
+					<td class="red-header">AGO</td>
+					<td class="red-header">SEP</td>
+					<td class="red-header">OCT</td>
+					<td class="red-header">NOV</td>
+					<td class="red-header">DIC</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Labor</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+				<td></td>
+					<td>Beneficio y Bienestar</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Materiales</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Servicios y Contratos</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Otros</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+
+				<tr>
+					<td></td>
+					<td class="green-header">DTTO ORIENTAL</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td class="red-header">  </td>
+					<td class="red-header">DESCRIPCION</td>
+					<td class="red-header">ENE</td>
+					<td class="red-header">FEB</td>
+					<td class="red-header">MAR</td>
+					<td class="red-header">ABR</td>
+					<td class="red-header">MAY</td>
+					<td class="red-header">JUN</td>
+					<td class="red-header">JUL</td>
+					<td class="red-header">AGO</td>
+					<td class="red-header">SEP</td>
+					<td class="red-header">OCT</td>
+					<td class="red-header">NOV</td>
+					<td class="red-header">DIC</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Labor</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+				<td></td>
+					<td>Beneficio y Bienestar</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Materiales</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Servicios y Contratos</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Otros</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td class="green-header">Esfuerzo propio</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td class="red-header">  </td>
+					<td class="red-header">DESCRIPCION</td>
+					<td class="red-header">ENE</td>
+					<td class="red-header">FEB</td>
+					<td class="red-header">MAR</td>
+					<td class="red-header">ABR</td>
+					<td class="red-header">MAY</td>
+					<td class="red-header">JUN</td>
+					<td class="red-header">JUL</td>
+					<td class="red-header">AGO</td>
+					<td class="red-header">SEP</td>
+					<td class="red-header">OCT</td>
+					<td class="red-header">NOV</td>
+					<td class="red-header">DIC</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Labor</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+				<td></td>
+					<td>Beneficio y Bienestar</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Materiales</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Servicios y Contratos</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+				<tr>
+					<td></td>
+					<td>Otros</td>
+				 	<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>	
+				</tr>
+
+			</tbody>
+		</table>

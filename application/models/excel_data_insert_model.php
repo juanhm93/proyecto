@@ -29,6 +29,11 @@ $this->db->insert('user', $data_user);
 
 		 	$this->db->insert('reales',$realesvar);
 		 }
+
+		 public function mv($mvvar){
+
+		 	$this->db->insert('mejorv',$mvvar);
+		 }
 		 public function realesupdate($id,$reales){
 
 		 	$this->db->where('idproyecto',$id);
@@ -57,12 +62,27 @@ $this->db->insert('user', $data_user);
 		 public function mixtas($mix){
 		 	$this->db->insert('mixta',$mix);	
 		 }
+		 public function direccion($dir){
+		 	$this->db->insert('direccion',$dir);	
+		 }
 		 
 		  public function updatereal($id,$reales){
 
 		  	$this->db->where('idreal',$id);
 		 	$this->db->update('reales',$reales);
 		 }
+
+		 public function updateplan($id,$plan){
+
+		  	$this->db->where('idplan',$id);
+		 	$this->db->update('plan',$plan);
+		 }
+		  public function updatemv($id,$mejorv){
+
+		  	$this->db->where('idmv',$id);
+		 	$this->db->update('mejorv',$mejorv);
+		 }
+
 
 	
 }

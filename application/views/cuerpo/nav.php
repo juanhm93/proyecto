@@ -24,7 +24,7 @@
 			<li><a href="" ><span class="Text-menu" >actualizar Real </span></a></li>
 			<li><a href="" ><span class="Text-menu" > Mejor Vision </span></a></li>
 			<li><a href="<?= base_url()?>ctablahab" ><span class="Text-menu" > Gestion Inversion </span></a></li>
-			<li><a href="<?= base_url()?>ctablahab" ><span class="Text-menu" > Operaciones </span></a></li>
+			<li><a href="<?= base_url()?>coperahab" ><span class="Text-menu" > Operaciones </span></a></li>
 		</ul>
 		</li>
 		<li class='has-sub'><a href=""  class="accordion"><span class="Text-menu" >  Insertar nuevo </span></a>
@@ -36,11 +36,13 @@
 			<li><a href="<?= base_url()?>complemento/celementoc"  ><span class="Text-menu">Nuevo elemento de costo</span></a></li>
 			<li><a href="<?= base_url()?>complemento/Cdivision"  ><span class="Text-menu">Nueva Division </span></a></li>
 			</ul>
-			</li>
+			</li>	
 			<li><a href="<?= base_url()?>em/cemproyecto" ><span class="Text-menu" > Proyectos EM </span></a></li>
 		<li><a href="<?= base_url()?>cmixtas" ><span class="Text-menu" > input mixtas </span></a></li>
-		<li><a href="<?= base_url()?>dir/cdirejep" ><span class="Text-menu" > DIR EJECUTIVA EP </span></a></li>
-
+		<li><a href="<?= base_url()?>cdirejep" ><span class="Text-menu" > DIR EJECUTIVA EP </span></a></li>
+		<li><a href="<?= base_url()?>cgesinv" ><span class="Text-menu" > GESTION INVERSION EP </span></a></li>
+		<li><a href="<?= base_url()?>coperaciones" ><span class="Text-menu" > OPERACIONES EP </span></a></li>
+		<li><a href="<?= base_url()?>cepdivoriental" ><span class="Text-menu" > EP DIV ORIENTAL </span></a></li>
 		<li><a href="<?= base_url()?>habilitadora/chabopm" ><span class="Text-menu" > habilitadora </span></a></li>
 		<li><a href="<?= base_url()?>consumarinf/cinfgere" ><span class="Text-menu" > completar gerencia</span></a></li>
 		<li><a href="<?= base_url()?>consumarinf/csiglasgere" ><span class="Text-menu" > gerencia siglas</span></a></li>

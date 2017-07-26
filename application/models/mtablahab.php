@@ -29,7 +29,7 @@ class Mtablahab extends CI_model
         return $this->db->get();
     }
 
-    public function gestioninv($an,$m){
+    public function gestioninv($an,$m,$i){
          $this->db->select('g.gerehab,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r,e.elemento');
         $this->db->From('reales r');
         $this->db->join('habelec hab', 'r.idhab=hab.idhabelec');
@@ -38,13 +38,59 @@ class Mtablahab extends CI_model
         $this->db->join('elementocosto e','e.idele = hab.idelecfk');
         $this->db->where('r.idanho',$an);
         $this->db->where('r.idmoneda',$m);
-        $this->db->where('h.idtipo_IO',1);
+        $this->db->where('h.idtipo_IO',$i);
         $this->db->order_by('idgerencia','asc');
         $this->db->order_by('idele','asc');
         return $this->db->get();
 
     }
-     public function planh($an,$m){
+      public function gestioninvmv($an,$m,$i){
+         $this->db->select('g.gerehab,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv,e.elemento');
+        $this->db->From('mejorv mv');
+        $this->db->join('habelec hab', 'mv.idhabelecfk=hab.idhabelec');
+        $this->db->join('habilitadora h','hab.idhabfk = h.idhab');
+        $this->db->join('gerencia g','h.idgerencia = g.idgere');
+        $this->db->join('elementocosto e','e.idele = hab.idelecfk');
+        $this->db->where('mv.anho',$an);
+        $this->db->where('mv.idmonedafk',$m);
+        $this->db->where('h.idtipo_IO',$i);
+        $this->db->order_by('idgerencia','asc');
+        $this->db->order_by('idele','asc');
+        return $this->db->get();
+
+    }
+
+     public function gestioninvmvequiv($an,$i){
+         $this->db->select('g.gerehab,hab.idhabfk,hab.idelecfk,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv,e.elemento');
+        $this->db->From('mejorv mv');
+        $this->db->join('habelec hab', 'mv.idhabelecfk=hab.idhabelec');
+        $this->db->join('habilitadora h','hab.idhabfk = h.idhab');
+        $this->db->join('gerencia g','h.idgerencia = g.idgere');
+        $this->db->join('elementocosto e','e.idele = hab.idelecfk');
+        $this->db->where('mv.anho',$an);
+        $this->db->where('h.idtipo_IO',$i);
+        $this->db->order_by('idgerencia','asc');
+        $this->db->order_by('idele','asc');
+        return $this->db->get();
+
+    }
+
+    public function gestioninvequv($an,$i){
+         $this->db->select('r.idmoneda,hab.idhabfk,hab.idelecfk,r.idhab,g.gerehab,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r,e.elemento');
+        $this->db->From('reales r');
+        $this->db->join('habelec hab', 'r.idhab=hab.idhabelec');
+        $this->db->join('habilitadora h','hab.idhabfk = h.idhab');
+        $this->db->join('gerencia g','h.idgerencia = g.idgere');
+        $this->db->join('elementocosto e','e.idele = hab.idelecfk');
+        $this->db->where('r.idanho',$an);
+        $this->db->where('h.idtipo_IO',$i);
+        $this->db->order_by('idgerencia','asc');
+        $this->db->order_by('idele','asc');
+        return $this->db->get();
+
+    }
+
+     public function planh($an,$m,$i){
          $this->db->select('g.gerehab,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p,e.elemento');
         $this->db->From('plan p');
         $this->db->join('habelec hab', 'p.idhab=hab.idhabelec');
@@ -53,29 +99,29 @@ class Mtablahab extends CI_model
         $this->db->join('elementocosto e','e.idele = hab.idelecfk');
         $this->db->where('p.idanho',$an);
         $this->db->where('p.idmoneda',$m);
-        $this->db->where('h.idtipo_IO',1);
+        $this->db->where('h.idtipo_IO',$i);
         $this->db->order_by('idgerencia','asc');
         $this->db->order_by('idele','asc');
         return $this->db->get();
 
     }
-    public function  planhequiv($an){
+    public function  planhequiv($an,$i){
 
-         $this->db->select('p.idmoneda,p.idhab,g.gerehab,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p,e.elemento');
+         $this->db->select('hab.idhabfk,hab.idelecfk,p.idmoneda,p.idhab,g.gerehab,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p,e.elemento');
         $this->db->From('plan p');
         $this->db->join('habelec hab', 'p.idhab=hab.idhabelec');
         $this->db->join('habilitadora h','hab.idhabfk = h.idhab');
         $this->db->join('gerencia g','h.idgerencia = g.idgere');
         $this->db->join('elementocosto e','e.idele = hab.idelecfk');
         $this->db->where('p.idanho',$an);
-        $this->db->where('h.idtipo_IO',1);
+        $this->db->where('h.idtipo_IO',$i);
         $this->db->order_by('idgerencia','asc');
         $this->db->order_by('idele','asc');
         return $this->db->get();
     }
 
 
-     public function gestioninvplan($an,$m){
+     public function gestioninvplan($an,$m,$i){
          $this->db->select('g.gerehab,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p,e.elemento');
         $this->db->From('plan p');
         $this->db->join('habelec hab', 'p.idhab = hab.idhabelec');
@@ -84,7 +130,7 @@ class Mtablahab extends CI_model
         $this->db->join('elementocosto e','e.idele = hab.idelecfk');
         $this->db->where('p.idanho',$an);
         $this->db->where('p.idmoneda',$m);
-        $this->db->where('h.idtipo_IO',1);
+        $this->db->where('h.idtipo_IO',$i);
         $this->db->order_by('idgerencia','asc');
         $this->db->order_by('idele','asc');
         return $this->db->get();

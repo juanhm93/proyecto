@@ -94,6 +94,186 @@ class Mhabrep extends CI_Model
 	 	 return $query->result_array();
 	 }
 
+	 /*
+		 SELECT gerencia.gerehab,habilitadora.tipodivfk,habelec.idelecfk,plan.enero_p,plan.febrero_p,plan.marzo_p,plan.abril_p,plan.mayo_p  FROM `plan` 
+JOIN habelec ON plan.idhab = habelec.idhabelec JOIN habilitadora ON habilitadora.idhab = habelec.idhabfk JOIN gerencia ON gerencia.idgere = habilitadora.idgerencia WHERE plan.idanho = 2017 AND habilitadora.idtipo_IO = 1 
+ORDER BY habelec.idelecfk
+
+
+	 */
+
+	 // CONSULTA HABILITADORAS PLAN PARA CUALQUIER MONEDA
+	 public function gestioninversionhabplan($an,$m,$inv){
+
+	 $this->db->select('g.gerehab,hab.tipodivfk,h.idelecfk,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p');	
+	 $this->db->from('plan p');
+	 $this->db->join('habelec h','p.idhab=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('p.idanho',$an);
+	 $this->db->where('p.idmoneda',$m);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+	 }
+	 	  // CONSULTA HABILITADORAS PLAN EQUIVALENTE 
+	 public function gestioninversionhabplaneq($an,$inv){
+
+	 $this->db->select('p.idmoneda,g.gerehab,hab.tipodivfk,h.idelecfk,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p');	
+	 $this->db->from('plan p');
+	 $this->db->join('habelec h','p.idhab=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('p.idanho',$an);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+
+	 }
+	   // CONSULTA HABILITADORAS REAL PARA CUALQUIER MONEDA
+	 public function gestioninversionhabreal($an,$m,$inv){
+
+	 	 $this->db->select('g.gerehab,hab.tipodivfk,h.idelecfk,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r');	
+	 $this->db->from('reales r');
+	 $this->db->join('habelec h','r.idhab=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('r.idanho',$an);
+	 $this->db->where('r.idmoneda',$m);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+	 }
+	  // CONSULTA HABILITADORAS REAL EQUIVALENTE 
+	 public function gestioninversionhabrealeq($an,$inv){
+	 	 $this->db->select('r.idmoneda,g.gerehab,hab.tipodivfk,h.idelecfk,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r');	
+	 $this->db->from('reales r');
+	 $this->db->join('habelec h','r.idhab=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('r.idanho',$an);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+	 }
+	  // CONSULTA HABILITADORAS  MEJOR VISION PARA CUALQUIER MONEDA
+	 public function ginvmv($an,$m,$inv){
+	 $this->db->select('g.gerehab,hab.tipodivfk,h.idelecfk,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv');	
+	 $this->db->from('mejorv mv');
+	 $this->db->join('habelec h','mv.idhabfk=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('mv.anho',$an);
+	 $this->db->where('mv.idmonedafk',$m);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+
+
+	 }
+
+	 	 // CONSULTA HABILITADORAS  MEJOR VISION EQUIVALENTE 
+	 public function ginvmvequiv($an,$inv){
+
+	 $this->db->select('mv.idmonedafk,g.gerehab,hab.tipodivfk,h.idelecfk,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv');	
+	 $this->db->from('mejorv mv');
+	 $this->db->join('habelec h','mv.idhabelecfk=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('mv.anho',$an);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+	 }
+/*
+	 	SELECT plan.enero_p,plan.febrero_p,plan.marzo_p,plan.abril_p,plan.mayo_p FROM `plan` JOIN direccion ON direccion.iddir = plan.iddirfk JOIN dir_io ON direccion.iddir_iofk = dir_io.iddir_io WHERE plan.idanho = 2017 AND dir_io.tipoiofk = 1 
+			*/				
+	 		 // CONSULTA DIRECCION EJECUTIVA PLAN PARA CUALQUIER MONEDA 
+	 public function direcejecutivainvplan($an,$m,$inv){
+
+	 	$this->db->select('d.idelefk,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p');
+	 	$this->db->from('plan p');
+	 	$this->db->join('direccion d','d.iddir = p.iddirfk');
+	 	$this->db->join('dir_io dir','dir.iddir_io = d.iddir_iofk');
+	 	$this->db->where('p.idanho',$an);
+	 	$this->db->where('p.idmoneda',$m);
+	 	$this->db->where('dir.tipoiofk',$inv);
+	 	return $this->db->get();
+	 	
+
+	 }
+	 // CONSULTA DIRECCION EJECUTIVA PLAN EQUIVALENTE 
+	public function direcejecutivainvplaneq($an,$inv){
+
+			$this->db->select('p.idmoneda,d.idelefk,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p');
+	 	$this->db->from('plan p');
+	 	$this->db->join('direccion d','d.iddir = p.iddirfk');
+	 	$this->db->join('dir_io dir','dir.iddir_io = d.iddir_iofk');
+	 	$this->db->where('p.idanho',$an);
+	 	$this->db->where('dir.tipoiofk',$inv);
+	 	return $this->db->get();
+	}
+
+	// CONSULTA DIRECCION EJECUTIVA REAL PARA CUALQUIER MONEDA
+	public function	direcejecutivainvreal($an,$m,$inv){
+
+		$this->db->select('d.idelefk,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r');
+	 	$this->db->from('reales r');
+	 	$this->db->join('direccion d','d.iddir = r.iddirfk');
+	 	$this->db->join('dir_io dir','dir.iddir_io = d.iddir_iofk');
+	 	$this->db->where('r.idanho',$an);
+	 	$this->db->where('r.idmoneda',$m);
+	 	$this->db->where('dir.tipoiofk',$inv);
+	 	return $this->db->get();
+	 	
+	}
+	// CONSULTA DIRECCION EJECUTIVA REAL EQUIVALENTE
+	public function direcejecutivainvrealeq($an,$inv){
+		$this->db->select('r.idmoneda,d.idelefk,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r');
+	 	$this->db->from('reales r');
+	 	$this->db->join('direccion d','d.iddir = r.iddirfk');
+	 	$this->db->join('dir_io dir','dir.iddir_io = d.iddir_iofk');
+	 	$this->db->where('r.idanho',$an);
+	 	$this->db->where('dir.tipoiofk',$inv);
+	 	return $this->db->get();
+
+	}
+
+	// CONSULTA DIRECCION EJECUTIVA MEJOR VISION 
+
+	public function direcejecutivamv($an,$m,$inv){
+
+		$this->db->select('d.idelefk,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv');
+	 	$this->db->from('mejorv mv');
+	 	$this->db->join('direccion d','d.iddir = mv.iddirfk');
+	 	$this->db->join('dir_io dir','dir.iddir_io = d.iddir_iofk');
+	 	$this->db->where('mv.anho',$an);
+	 	$this->db->where('mv.idmonedafk',$m);
+	 	$this->db->where('dir.tipoiofk',$inv);
+	 	return $this->db->get();
+
+	}
+
+	// CONSULTA DIRECCION EJECUTIVA MEJOR VISION EQUIVALENTE
+
+	public function direcejecutivamveq($an,$inv){
+
+		$this->db->select('mv.idmonedafk,d.idelefk,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv');
+	 	$this->db->from('mejorv mv');
+	 	$this->db->join('direccion d','d.iddir = mv.iddirfk');
+	 	$this->db->join('dir_io dir','dir.iddir_io = d.iddir_iofk');
+	 	$this->db->where('mv.anho',$an);
+	 	$this->db->where('dir.tipoiofk',$inv);
+	 	return $this->db->get();
+
+	}
+
 
 
 }

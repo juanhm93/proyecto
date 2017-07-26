@@ -36,6 +36,10 @@ class Get_id extends CI_model
 	    $result = $this->db->select_max('idmixta')->get('mixta')->result_array();
 	    return (int) $result[0]['idmixta'];
 	}
+	function getmax_number_dir() {
+	    $result = $this->db->select_max('iddir')->get('direccion')->result_array();
+	    return (int) $result[0]['iddir'];
+	}
 
 	function getmax_number_bene(){
 		$result = $this->db->select_max('idbeneficio')->get('beneficioybienestar')->result_array();
