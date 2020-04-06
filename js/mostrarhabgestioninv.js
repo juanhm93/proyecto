@@ -35,98 +35,14 @@ function mostrarhab() {
 							var datos = $.parseJSON(res);
 							var informacion;
 							var aux = '';
-							var e,f,m,a,ma,j,ju,ag,s,o,n,d;
-							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
+							 
+						 	informacion = arriba;
+						 	//informacion+= gestioninversionmostrar(datos,aux,'_p');			
 
-							for (var i = 0; i <  datos.length ; i++){
-
-								if(aux == ''){
-                        			aux = datos[i]['gerehab'];
-                        		}	
-
-                        			if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-
-									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
-										i--;
-                        				
-                        			}else{
-                        				e = e + parseFloat(datos[i]['enero_p']);
-                        				f = f +	 parseFloat(datos[i]['febrero_p']);
-                        				m = m +	parseFloat(datos[i]['marzo_p']);
-                        				a = a +	 parseFloat(datos[i]['abril_p']);
-                        				ma = ma + parseFloat(datos[i]['mayo_p']);
-                        				j= j +	 parseFloat(datos[i]['junio_p']);
-                        				ju= ju +	parseFloat(datos[i]['julio_p']);
-                        				ag= ag + parseFloat(datos[i]['agosto_p']);
-                        				s =s +	 parseFloat(datos[i]['septiembre_p']);
-                        				o = o +	 parseFloat(datos[i]['octubre_p']);
-                        				n = n +	parseFloat(datos[i]['noviembre_p']);
-                        				d = d +	 parseFloat(datos[i]['diciembre_p']);
-
-
-                        				informacion+= '<tr>';
-										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
-										informacion+= '<td>'+datos[i]['elemento']+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['enero_p']).toFixed(2)+'</td>';		
-										informacion+= '<td>'+parseFloat(datos[i]['febrero_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['marzo_p']).toFixed(2)+'</td>';
-									 	informacion+= '<td>'+parseFloat(datos[i]['abril_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['mayo_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['junio_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['julio_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['agosto_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['septiembre_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['octubre_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['noviembre_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['diciembre_p']).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										}
-
-
-                        			}
-
-							}//fin del for i = 0 			
-
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							
 							alert('No posee Bolivares Puros');
 
 						}
@@ -149,98 +65,12 @@ function mostrarhab() {
 							var datos = $.parseJSON(res);
 							var informacion;
 							var aux = '';
-							var e,f,m,a,ma,j,ju,ag,s,o,n,d;
-							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
+							 informacion = gestioninversionmostrar(datos,aux,'_p');
 
-							for (var i = 0; i <  datos.length ; i++){
-
-								if(aux == ''){
-                        			aux = datos[i]['gerehab'];
-                        		}	
-
-                        			if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-
-									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
-										i--;
-                        				
-                        			}else{
-                        				e = e + parseFloat(datos[i]['enero_p']);
-                        				f = f +	 parseFloat(datos[i]['febrero_p']);
-                        				m = m +	parseFloat(datos[i]['marzo_p']);
-                        				a = a +	 parseFloat(datos[i]['abril_p']);
-                        				ma = ma + parseFloat(datos[i]['mayo_p']);
-                        				j= j +	 parseFloat(datos[i]['junio_p']);
-                        				ju= ju +	parseFloat(datos[i]['julio_p']);
-                        				ag= ag + parseFloat(datos[i]['agosto_p']);
-                        				s =s +	 parseFloat(datos[i]['septiembre_p']);
-                        				o = o +	 parseFloat(datos[i]['octubre_p']);
-                        				n = n +	parseFloat(datos[i]['noviembre_p']);
-                        				d = d +	 parseFloat(datos[i]['diciembre_p']);
-
-
-                        				informacion+= '<tr>';
-										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
-										informacion+= '<td>'+datos[i]['elemento']+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['enero_p']).toFixed(2)+'</td>';		
-										informacion+= '<td>'+parseFloat(datos[i]['febrero_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['marzo_p']).toFixed(2)+'</td>';
-									 	informacion+= '<td>'+parseFloat(datos[i]['abril_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['mayo_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['junio_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['julio_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['agosto_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['septiembre_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['octubre_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['noviembre_p']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['diciembre_p']).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										}
-
-
-                        			}
-
-							}//fin del for i = 0 			
-
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							 
 							alert("No posee Dolares Puros");
 
 						}
@@ -360,22 +190,22 @@ function mostrarhab() {
 
 
 								if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+                        				informacion+= '<div class="Tabla-fondo">';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</td>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</td>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</td>';
+										informacion+= '</div>';
 
 									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
                         			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
@@ -397,7 +227,7 @@ function mostrarhab() {
                         				d = d +	 parseFloat(dici);
 
 
-                        				informacion+= '<tr>';
+                        				informacion+= '<div class="Tabla-fondo" >';
 										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
 										informacion+= '<td>'+datos[i]['elemento']+'</td>';
 										informacion+= '<td>'+parseFloat(enero).toFixed(2)+'</td>';		
@@ -412,24 +242,24 @@ function mostrarhab() {
 										informacion+= '<td>'+parseFloat(octu).toFixed(2)+'</td>';
 										informacion+= '<td>'+parseFloat(novi).toFixed(2)+'</td>';
 										informacion+= '<td>'+parseFloat(dici).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+										informacion+= '</div>';
 										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+											informacion+= '<div class="Tabla-fondo" >';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</td>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</td>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ma).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(j).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ju).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</td>';
+										informacion+= '</div>';
 										}//fin ultimo
 
                         			}//fin aux = a gerehab
@@ -439,10 +269,10 @@ function mostrarhab() {
 								
 							}//fin del for i = 0 			
 
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No ´posee dolares Equivalentes');
 						}
 
@@ -468,98 +298,12 @@ function mostrarhab() {
 							var datos = $.parseJSON(res);
 							var informacion;
 							var aux = '';
-							var e,f,m,a,ma,j,ju,ag,s,o,n,d;
-							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
-
-							for (var i = 0; i <  datos.length ; i++){
-
-								if(aux == ''){
-                        			aux = datos[i]['gerehab'];
-                        		}	
-
-                        			if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-
-									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
-										i--;
-                        				
-                        			}else{
-                        				e = e + parseFloat(datos[i]['enero_r']);
-                        				f = f +	 parseFloat(datos[i]['febrero_r']);
-                        				m = m +	parseFloat(datos[i]['marzo_r']);
-                        				a = a +	 parseFloat(datos[i]['abril_r']);
-                        				ma = ma + parseFloat(datos[i]['mayo_r']);
-                        				j= j +	 parseFloat(datos[i]['junio_r']);
-                        				ju= ju +	parseFloat(datos[i]['julio_r']);
-                        				ag= ag + parseFloat(datos[i]['agosto_r']);
-                        				s =s +	 parseFloat(datos[i]['septiembre_r']);
-                        				o = o +	 parseFloat(datos[i]['octubre_r']);
-                        				n = n +	parseFloat(datos[i]['noviembre_r']);
-                        				d = d +	 parseFloat(datos[i]['diciembre_r']);
-
-
-                        				informacion+= '<tr>';
-										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
-										informacion+= '<td>'+datos[i]['elemento']+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['enero_r']).toFixed(2)+'</td>';		
-										informacion+= '<td>'+parseFloat(datos[i]['febrero_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['marzo_r']).toFixed(2)+'</td>';
-									 	informacion+= '<td>'+parseFloat(datos[i]['abril_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['mayo_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['junio_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['julio_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['agosto_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['septiembre_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['octubre_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['noviembre_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['diciembre_r']).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										}
-
-
-                        			}
-
-							}//fin del for i = 0 			
-
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+						 
+						informacion= gestioninversionmostrar(datos,aux,'_r');
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No posee Bolivares Puros');
 
 						}
@@ -582,98 +326,13 @@ function mostrarhab() {
 							var datos = $.parseJSON(res);
 							var informacion;
 							var aux = '';
-							var e,f,m,a,ma,j,ju,ag,s,o,n,d;
-							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
 
-							for (var i = 0; i <  datos.length ; i++){
+							informacion= gestioninversionmostrar(datos,aux,'_r');
 
-								if(aux == ''){
-                        			aux = datos[i]['gerehab'];
-                        		}	
-
-                        			if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-
-									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
-										i--;
-                        				
-                        			}else{
-                        				e = e + parseFloat(datos[i]['enero_r']);
-                        				f = f +	 parseFloat(datos[i]['febrero_r']);
-                        				m = m +	parseFloat(datos[i]['marzo_r']);
-                        				a = a +	 parseFloat(datos[i]['abril_r']);
-                        				ma = ma + parseFloat(datos[i]['mayo_r']);
-                        				j= j +	 parseFloat(datos[i]['junio_r']);
-                        				ju= ju +	parseFloat(datos[i]['julio_r']);
-                        				ag= ag + parseFloat(datos[i]['agosto_r']);
-                        				s =s +	 parseFloat(datos[i]['septiembre_r']);
-                        				o = o +	 parseFloat(datos[i]['octubre_r']);
-                        				n = n +	parseFloat(datos[i]['noviembre_r']);
-                        				d = d +	 parseFloat(datos[i]['diciembre_r']);
-
-
-                        				informacion+= '<tr>';
-										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
-										informacion+= '<td>'+datos[i]['elemento']+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['enero_r']).toFixed(2)+'</td>';		
-										informacion+= '<td>'+parseFloat(datos[i]['febrero_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['marzo_r']).toFixed(2)+'</td>';
-									 	informacion+= '<td>'+parseFloat(datos[i]['abril_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['mayo_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['junio_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['julio_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['agosto_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['septiembre_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['octubre_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['noviembre_r']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['diciembre_r']).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										}
-
-
-                        			}
-
-							}//fin del for i = 0 			
-
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No posee dolares Puros');
 
 						}
@@ -795,22 +454,22 @@ function mostrarhab() {
 
 
 								if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+                        				informacion+= '<div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</td>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</td>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ma).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(j).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ju).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</td>';
+										informacion+= '</div>';
 
 									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
                         			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
@@ -832,7 +491,7 @@ function mostrarhab() {
                         				d = d +	 parseFloat(dici);
 
 
-                        				informacion+= '<tr>';
+                        				informacion+= '<div class="Tabla-fondo" >';
 										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
 										informacion+= '<td>'+datos[i]['elemento']+'</td>';
 										informacion+= '<td>'+parseFloat(enero).toFixed(2)+'</td>';		
@@ -847,7 +506,7 @@ function mostrarhab() {
 										informacion+= '<td>'+parseFloat(octu).toFixed(2)+'</td>';
 										informacion+= '<td>'+parseFloat(novi).toFixed(2)+'</td>';
 										informacion+= '<td>'+parseFloat(dici).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+										informacion+= '</div>';
 										if(i == (datos.length-1)){
 											informacion+= '<tr >';
 										informacion+= '<td class="red-header"></td>';
@@ -864,7 +523,7 @@ function mostrarhab() {
 										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
 										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
 										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+										informacion+= '</div>';
 										}//fin ultimo
 
                         			}//fin aux = a gerehab
@@ -874,10 +533,10 @@ function mostrarhab() {
 								
 							}//fin del for i = 0 			
 
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No ´posee dolares Equivalentes');
 						}
 
@@ -902,98 +561,12 @@ function mostrarhab() {
 							var datos = $.parseJSON(res);
 							var informacion;
 							var aux = '';
-							var e,f,m,a,ma,j,ju,ag,s,o,n,d;
-							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
+							informacion= gestioninversionmostrar(datos,aux,'_mv');
 
-							for (var i = 0; i <  datos.length ; i++){
-
-								if(aux == ''){
-                        			aux = datos[i]['gerehab'];
-                        		}	
-
-                        			if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-
-									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
-										i--;
-                        				
-                        			}else{
-                        				e = e + parseFloat(datos[i]['enero_mv']);
-                        				f = f +	 parseFloat(datos[i]['febrero_mv']);
-                        				m = m +	parseFloat(datos[i]['marzo_mv']);
-                        				a = a +	 parseFloat(datos[i]['abril_mv']);
-                        				ma = ma + parseFloat(datos[i]['mayo_mv']);
-                        				j= j +	 parseFloat(datos[i]['junio_mv']);
-                        				ju= ju +	parseFloat(datos[i]['julio_mv']);
-                        				ag= ag + parseFloat(datos[i]['agosto_mv']);
-                        				s =s +	 parseFloat(datos[i]['septiembre_mv']);
-                        				o = o +	 parseFloat(datos[i]['octubre_mv']);
-                        				n = n +	parseFloat(datos[i]['noviembre_mv']);
-                        				d = d +	 parseFloat(datos[i]['diciembre_mv']);
-
-
-                        				informacion+= '<tr>';
-										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
-										informacion+= '<td>'+datos[i]['elemento']+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['enero_mv']).toFixed(2)+'</td>';		
-										informacion+= '<td>'+parseFloat(datos[i]['febrero_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['marzo_mv']).toFixed(2)+'</td>';
-									 	informacion+= '<td>'+parseFloat(datos[i]['abril_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['mayo_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['junio_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['julio_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['agosto_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['septiembre_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['octubre_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['noviembre_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['diciembre_mv']).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										}
-
-
-                        			}
-
-							}//fin del for i = 0 			
-
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No posee Bolivares Puros');
 
 						}
@@ -1016,98 +589,12 @@ function mostrarhab() {
 							var datos = $.parseJSON(res);
 							var informacion;
 							var aux = '';
-							var e,f,m,a,ma,j,ju,ag,s,o,n,d;
-							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
+							informacion= gestioninversionmostrar(datos,aux,'_mv');
 
-							for (var i = 0; i <  datos.length ; i++){
-
-								if(aux == ''){
-                        			aux = datos[i]['gerehab'];
-                        		}	
-
-                        			if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-
-									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
-                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
-										aux = datos[i]['gerehab'];
-										i--;
-                        				
-                        			}else{
-                        				e = e + parseFloat(datos[i]['enero_mv']);
-                        				f = f +	 parseFloat(datos[i]['febrero_mv']);
-                        				m = m +	parseFloat(datos[i]['marzo_mv']);
-                        				a = a +	 parseFloat(datos[i]['abril_mv']);
-                        				ma = ma + parseFloat(datos[i]['mayo_mv']);
-                        				j= j +	 parseFloat(datos[i]['junio_mv']);
-                        				ju= ju +	parseFloat(datos[i]['julio_mv']);
-                        				ag= ag + parseFloat(datos[i]['agosto_mv']);
-                        				s =s +	 parseFloat(datos[i]['septiembre_mv']);
-                        				o = o +	 parseFloat(datos[i]['octubre_mv']);
-                        				n = n +	parseFloat(datos[i]['noviembre_mv']);
-                        				d = d +	 parseFloat(datos[i]['diciembre_mv']);
-
-
-                        				informacion+= '<tr>';
-										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
-										informacion+= '<td>'+datos[i]['elemento']+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['enero_mv']).toFixed(2)+'</td>';		
-										informacion+= '<td>'+parseFloat(datos[i]['febrero_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['marzo_mv']).toFixed(2)+'</td>';
-									 	informacion+= '<td>'+parseFloat(datos[i]['abril_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['mayo_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['junio_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['julio_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['agosto_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['septiembre_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['octubre_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['noviembre_mv']).toFixed(2)+'</td>';
-										informacion+= '<td>'+parseFloat(datos[i]['diciembre_mv']).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										if(i == (datos.length-1)){
-											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
-										}
-
-
-                        			}
-
-							}//fin del for i = 0 			
-
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No posee Dolares Puros');
 
 						}
@@ -1229,22 +716,22 @@ function mostrarhab() {
 
 
 								if(aux != datos[i]['gerehab']){
-                        				informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+                        				informacion+= '<div class="Tabla-Fondo" >';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</td>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</td>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ma).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(j).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ju).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</td>';
+										informacion+= '</div>';
 
 									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
                         			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
@@ -1266,7 +753,7 @@ function mostrarhab() {
                         				d = d +	 parseFloat(dici);
 
 
-                        				informacion+= '<tr>';
+                        				informacion+= '<div class="Tabla-fondo" >';
 										informacion+= '<td>'+datos[i]['gerehab']+'</td>';
 										informacion+= '<td>'+datos[i]['elemento']+'</td>';
 										informacion+= '<td>'+parseFloat(enero).toFixed(2)+'</td>';		
@@ -1281,24 +768,24 @@ function mostrarhab() {
 										informacion+= '<td>'+parseFloat(octu).toFixed(2)+'</td>';
 										informacion+= '<td>'+parseFloat(novi).toFixed(2)+'</td>';
 										informacion+= '<td>'+parseFloat(dici).toFixed(2)+'</td>';	
-										informacion+= '</tr>';
+										informacion+= '</div>';
 										if(i == (datos.length-1)){
 											informacion+= '<tr >';
-										informacion+= '<td class="red-header"></td>';
-										informacion+= '<td class="red-header">Total</td>';
-										informacion+= '<td class="red-header">'+parseFloat(e).toFixed(2)+'</td>';		
-										informacion+= '<td class="red-header">'+parseFloat(f).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(m).toFixed(2)+'</td>';
-									 	informacion+= '<td class="red-header">'+parseFloat(a).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ma).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(j).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ju).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(ag).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(s).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(o).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(n).toFixed(2)+'</td>';
-										informacion+= '<td class="red-header">'+parseFloat(d).toFixed(2)+'</td>';
-										informacion+= '</tr>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</td>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</td>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ma).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(j).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ju).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</td>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</td>';
+										informacion+= '</div>';
 										}//fin ultimo
 
                         			}//fin aux = a gerehab
@@ -1308,10 +795,10 @@ function mostrarhab() {
 								
 							}//fin del for i = 0 			
 
-							$('#r2 tbody').html('');
-							$('#r2 tbody').append(informacion);	
+							$('#gesinvhab').html('');
+							$('#gesinvhab').append(informacion);	
 						}else{
-							$('#r2 tbody').html('');
+							$('#gesinvhab').html('');
 							alert('No posee dolares Equivalentes');
 						}
 
@@ -1331,6 +818,129 @@ function mostrarhab() {
 		
 
 	});// fin de funcion click
+
+
+}
+
+
+
+function gestioninversionmostrar(datos,aux,com){
+	var informacion;
+	var e,f,m,a,ma,j,ju,ag,s,o,n,d;
+							e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
+							ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;	
+
+							for (var i = 0; i <  datos.length ; i++){
+
+								if(aux == ''){
+                        			aux = datos[i]['gerehab'];
+                        		}	
+
+                        			if(aux != datos[i]['gerehab']){
+                        				informacion= '<div class="Tabla-fondo" >';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</div>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</div>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ma).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(j).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ju).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</div>';
+										informacion+= '</div>';
+
+									e = 0.0;f = 0.0;m = 0.0;a = 0.0;ma = 0.0;j = 0.0;
+                        			ju = 0.0;ag = 0.0;s = 0.0;o = 0.0;n = 0.0;d = 0.0;
+										aux = datos[i]['gerehab'];
+										i--;
+                        				
+                        			}else{
+                        				e = e + parseFloat(datos[i]['enero'+com+'']);
+                        				f = f +	 parseFloat(datos[i]['febrero'+com+'']);
+                        				m = m +	parseFloat(datos[i]['marzo'+com+'']);
+                        				a = a +	 parseFloat(datos[i]['abril'+com+'']);
+                        				ma = ma + parseFloat(datos[i]['mayo'+com+'']);
+                        				j= j +	 parseFloat(datos[i]['junio'+com+'']);
+                        				ju= ju +	parseFloat(datos[i]['julio'+com+'']);
+                        				ag= ag + parseFloat(datos[i]['agosto'+com+'']);
+                        				s =s +	 parseFloat(datos[i]['septiembre'+com+'']);
+                        				o = o +	 parseFloat(datos[i]['octubre'+com+'']);
+                        				n = n +	parseFloat(datos[i]['noviembre'+com+'']);
+                        				d = d +	 parseFloat(datos[i]['diciembre'+com+'']);
+
+
+                        				informacion+= '<div class="Tabla-fondo" >';
+										informacion+= '<div class="Tabla-Elemento">' +datos[i]['gerehab']+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+datos[i]['elemento']+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['enero'+com+'']).toFixed(2)+'</div>';		
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['febrero'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['marzo'+com+'']).toFixed(2)+'</div>';
+									 	informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['abril'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['mayo'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['junio'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['julio'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['agosto'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['septiembre'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['octubre'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['noviembre'+com+'']).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento">'+parseFloat(datos[i]['diciembre'+com+'']).toFixed(2)+'</div>';
+										informacion+= '</div>';
+										if(i == (datos.length-1)){
+											informacion+= '<div class="Tabla-fondo" >';
+										informacion+= '<div class="Tabla-Elemento-Encabezado"></div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">Total</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(e).toFixed(2)+'</div>';		
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(f).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(m).toFixed(2)+'</div>';
+									 	informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(a).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ma).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(j).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ju).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(ag).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(s).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(o).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(n).toFixed(2)+'</div>';
+										informacion+= '<div class="Tabla-Elemento-Encabezado">'+parseFloat(d).toFixed(2)+'</div>';
+										informacion+= '</div>';
+										}
+
+
+                        			}
+
+							}//fin del for i = 0 			
+
+							return informacion;
+}
+
+
+function arriba(){
+
+	var informacion;
+	
+					informacion+='	<div class="Tabla-fondo" >';
+	 				informacion+='	<div class="Tabla-Elemento-Encabezado">var</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">Total</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">ENE </div>';		
+					informacion+='	<div class="Tabla-Elemento-Encabezado"> FEB</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">MAR </div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">ABR</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">MAY</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">JUN</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado"></div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">JUL</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">AGO</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">SEP</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">OCT</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">NOV</div>';
+					informacion+='	<div class="Tabla-Elemento-Encabezado">DIC</div>';
+					informacion+='</div>';
+
+return informacion;	
 
 
 }

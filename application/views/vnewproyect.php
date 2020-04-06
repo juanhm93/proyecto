@@ -1,34 +1,26 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<h2>Nuevo Proyecto</h2>
-						<div class="form-proyecto">
+							<span class="Titulo-Aplicacion">PROYECTOS </span>
+							<span class="Separador_Modulo"></span>
+							<span class="Sub-Titulo-Aplicacion">Nuevo Proyecto</span>
+						<div  >
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
 							 
 							<form class="form-horizontal" method="post" action="<?= base_url();?>insertform/cins/insertproyecto">
 							<div class="box-body">
-								<div class="form-group select_container">
-								<div for="renglon"  class="select_title">Renglon </div>
-								<input type="text" class="form-control" name="renglon" id="renglon" aria-describedby="emailHelp" placeholder="ingrese datos del renglon de proyecto">
-								<small id="emailHelp" class="form-text text-muted"> (Ejemplo de renglon de proyecto )</small>
+
+								<div class="form-group select_container1">
+										<div for="anhops" class="select_title">Año</div>		
+										<select class="select-select" id="anhops" name="anhops" required  >
+											<option value="">--seleccionar opcion--</option>		
+											<?php for($i=date("Y")+2; $i >= 2010; $i--){ ?>
+												<option value="<?= $i;?>"><?= $i;?></option>		
+											<?php } ?> 	
+										</select>
 								</div>
-								<div class="form-group select_container">
-								<div for="titulo"  class="select_title">Titulo</div>
-								<input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="emailHelp" placeholder="ingresar el titulo del proyecto">
-								<small id="emailHelp" class="form-text text-muted"> (Ejemplo de titulo de proyecto )</small>
-								</div>
-								<!-- completar con el llamado de los select desde la base de datos :) -->
-								<div class="form-group select_container"  >
-								<div for="categoria"  class="select_title">Categoria</div>
-								<select class="select-select" class="form-control" name="categoria" id="categoria">
-								  <option value="">--Seleccionar categoria--</option>
-								  <?php
-								  foreach ($categoria as $fila) {?>
-								   <option value="<?= $fila['id'];?>"><?=$fila['numcategoria']." ".$fila['descripcion'];?></option>
-								<?php  } ?>
-								</select>
-								</div>
-								<div class="form-group select_container" >
-								<div for="dom" class="select_title">asignado</div>
-								<select class="select-select" class="form-control" name="dom" id="dom">
+
+								<div class="form-group select_container1" >
+								<div for="dom" class="select_title">Tipo</div>
+								<select class="select-select" class="form-control" name="dom" id="dom" required >
 								<option value="">--Opciones--</option>
 								  <?php
 								  foreach ($dom as $fila) {?>
@@ -36,7 +28,17 @@
 								<?php  } ?>
 								</select>
 								</div>
-								<div class="form-group select_container" id="divisionpro">
+
+
+								<!-- completar con el llamado de los select desde la base de datos :) -->
+								
+
+								<div class="form-group select_container1" id="emep">
+								
+								
+								</div>
+
+								<div class="form-group select_container1" id="divisionpro">
 								<div for="division"  class="select_title">Division</div>
 								<select class="select-select" class="form-control" name="division" id="division">
 								<option value="">--Seleccionar division--</option>
@@ -45,7 +47,7 @@
 									<?php } ?>  
 								</select>
 								</div>
-								<div class="form-group select_container" id="emxpro">
+								<div class="form-group select_container1" id="emxpro">
 								<div for="emx"  class="select_title">EM</div>
 								<select class="select-select" class="form-control" name="emx" id="emx">
 								<option value="">--Seleccionar EM--</option>
@@ -54,23 +56,13 @@
 									<?php } ?>  
 								</select>
 								</div>
-							<!--	<fieldset class="form-group">
-								<legend>Tipo</legend>
-								<div class="form-check">
-								  <label class="form-check-label" class="radio-inline">
-								    <input type="radio" class="form-check-input" name="optionsRadios" id="tipo" value="option1" checked>
-								    Inversiones
-								  </label>
+								<div class="form-group select_container1">
+								<div for="titulo"  class="select_title">Titulo</div>
+								<input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="emailHelp" placeholder="ingresar el titulo del proyecto" required>
+								<small id="emailHelp" class="form-text text-muted"> Ejemplo ("RECOMPLETACIÓN EXPLORATORIA PCG-06" )</small>
 								</div>
-								<div class="form-check">
-								<label class="form-check-label" class="radio-inline">
-								    <input type="radio" class="form-check-input" name="optionsRadios" id="tipo" value="option2">
-								    Operaciones
-								  </label>
-								</div>
-								</fieldset>-->
-
-								<div class="form-group select_container" >
+						 
+								<div class="form-group select_container1" >
 								<button type="submit" class="btn btn-danger" >guardar</button>
 								</div>
 								

@@ -1,12 +1,18 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<h2>Importar Habilitadora</h2>
+						 
+						<span class="Titulo-Aplicacion">Habilitadora</span>
+					<span class="Separador_Modulo"></span>
+					<span class="Sub-Titulo-Aplicacion">Importar Anual</span>
+					<span class="Sub-Titulo-Texto">Solo puede cargar Plan y real anual bajo el formato establecido</span>
+					<div style="height: 70px;"></div>
+				 
 						<div class="form-proyecto">
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
 							<form name="import" id="formulariohabilitadora" method="post" enctype="multipart/form-data" action="<?= base_url()?>exceldatainsert/importph">
 								
 								<div class="form-group select_container" >
-											<div for="anohabilitadora" class="select_title">año</div>		
-											<select class="select-select" id="anohabilitadora" name="anohabilitadora"  >
+											<div for="anohabilitadora" class="select_title">Año</div>		
+											<select class="select-select" id="anohabilitadora" name="anohabilitadora" required >
 												<option value="">--seleccionar opcion--</option>		
 												<?php for($i=date("Y"); $i >= 2010; $i--){ ?>
 													<option value="<?= $i;?>"><?= $i;?></option>		
@@ -17,14 +23,14 @@
 								<div class="form-group select_container">
 									
 								<div for="PR" class="select_title">Importacion</div>
-										<select class="select-select" name="PR" id="PR" >
+										<select class="select-select" name="PR" id="PR" required>
 										  <option value="">--seleccionar Opcion--</option>
 										  <option value="1">Plan</option>
 										  <option value="2">Real</option>
 										</select>
 								</div>	
 								<div class="form-group select_container">
-								<input type="file" name="excel" style="margin-left: 33px;" > 
+								<input type="file" name="excel" style="margin-left: 33px;" required > 
 								</div>
 								<div class="form-group select_container">
 									<input class="btn btn-danger navbar-btn" id="esfuerzoP" type="submit" name="submit" value="Importar">					

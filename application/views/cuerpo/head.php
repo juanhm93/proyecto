@@ -6,6 +6,11 @@
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">
 	<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/home_style.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>css/jquery.dataTables.min.svh.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url()?>css/sm-core-css.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url()?>css/sm-blue.css">
+    <link rel="stylesheet" href="<?= base_url()?>css/themes/red/pace-theme-minimal.css" />
+
+
 	 <style type="text/css">
 	 	
 	 	div.dataTables_wrapper {
@@ -13,71 +18,21 @@
         margin: 0 auto;
     }
 	 </style>
-	<script type="text/javascript" src="<?= base_url()?>js/jquery-svh.js"></script>
-	<script type="text/javascript" src="<?= base_url()?>js/jquery.dataTables.min.svh.js"></script>
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-    $('#example').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-    $('#r2').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-    $('#r3').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-    $('#p1').DataTable( {
-        "scrollY": 400,
-        "scrollX": true
-    	} );
-
-
-    $('#p2').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-    $('#p3').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-      $('#mejorv1').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-    $('#mejorv2').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-    $('#mejorv3').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-    	} );
-
-      $('#resumentotal').DataTable( {
-        "scrollY": 450,
-        "scrollX": true
-        } );
-
-      $('#divoriental').DataTable( {
-        "scrollY": 300,
-        "scrollX": true
-        } );
-
-
-	} );
-
-
-  
+      <script src="<?= base_url()?>js/pace.js"></script>
+      <script type="text/javascript" src="<?= base_url()?>js/jquery.js"></script>
+      <script type="text/javascript" src="<?= base_url()?>js/jquery.smartmenus.js"></script> 
+      
 	</script>
-	
+    <script type="text/javascript">    
+     $(function() {
+     $('#main-menu').smartmenus();
+    });
+
+        </script>
+	   
+    <script type="text/javascript">    
+   
+   </script>
+                                                
 </head>
 <body>

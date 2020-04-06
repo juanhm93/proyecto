@@ -1,30 +1,32 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-	<h4>Esfuerzo Propio Division Oriental</h4>
- 
+ 	<span class="Titulo-Aplicacion">Esfuerzo Propio Division Oriental</span>
+					<span class="Separador_Modulo"></span>
+					<span class="Sub-Titulo-Aplicacion">Ver Resumen</span>
 	
 		 <div class="form-group select_container">
-										<div for="anhoepdivoriental" class="select_title">año</div>		
-										<select class="select-select" id="anhoepdivoriental" name="anhoepdivoriental"  >
+										<div for="anhooccidental" class="select_title">año</div>		
+										<select class="select-select" id="anhooccidental" name="anhooccidental"  >
 											<option value="">--seleccionar opcion--</option>		
 											<?php for($i=date("Y"); $i >= 2010; $i--){ ?>
 												<option value="<?= $i;?>"><?= $i;?></option>		
 											<?php } ?> 	
 										</select>
 							</div>
-				 <div class="form-rango">
-		 			<div class="tab">
+							<div class="form-rango">
+					 			<div class="tab">
 
 		 					<button class="tablinks" onclick="openCity(event,'resumen')">Resumen</button>
   							<button class="tablinks" onclick="openCity(event,'planhab')">Plan</button>
   							<button class="tablinks" onclick="openCity(event,'realhab')">Real</button>
   							<button class="tablinks" onclick="openCity(event,'mvhab')">Mejor Vision</button>
+  							<button class="tablinks" onclick="openCity(event,'anthab')">Anteproyecto</button>
 							</div>
 
-					<div id="resumen" class="tabcontent">
+				<div id="resumen" class="tabcontent">
 						
 						<div class="radio">
-  									<input type="radio"  name="mostrarp" id="planbs" value="resumen">
-									<label for="planbs">Mostrar Resumen</label>
+  									<input type="radio"  name="res" id="res" value="resumen1">
+									<label for="res">Mostrar Resumen</label>
 	  						</div>
 
 		<table id="resumentotal" class="display nowrap" cellspacing="0" width="100%">
@@ -62,7 +64,6 @@
 
 					<div id="planhab" class="tabcontent">
 
-					 
 						<div class="radio">
   									<input type="radio"  name="mostrarp" id="planbs" value="pepdivori1">
 									<label for="planbs">Plan MMBsF</label>
@@ -73,7 +74,31 @@
 									<input type="radio"  name="mostrarp" id="plande" value="pepdivori3">
 									<label for="plande">Plan MM$ EQV</label>	
 	  						</div>
-	  			
+
+	  						<table id="r2" class="display nowrap" cellspacing="0" width="100%">
+							<thead>
+								<tr> 
+									<th>REAL</th>
+									<th>Elemento</th>
+									<th>Enero</th>
+									<th>Febrero</th>
+									<th>Marzo</th>
+									<th>abril</th>
+									<th>Mayo</th>
+									<th>Junio</th>
+									<th>Julio</th>
+									<th>Agosto</th>
+									<th>Septiembre</th>
+									<th>Octubre</th>
+									<th>Noviembre</th>
+									<th>Diciembre</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							</table>
+
 					</div>
 
 					<div id="realhab" class="tabcontent">
@@ -87,6 +112,31 @@
 									<input type="radio"  name="mostrarp" id="realde" value="repdivori3">
 									<label for="realde">Real MM$ EQV</label>
 
+							<table id="r3" class="display nowrap" cellspacing="0" width="100%">
+							<thead>
+								<tr> 
+									<th>REAL</th>
+									<th>Elemento</th>
+									<th>Enero</th>
+									<th>Febrero</th>
+									<th>Marzo</th>
+									<th>abril</th>
+									<th>Mayo</th>
+									<th>Junio</th>
+									<th>Julio</th>
+									<th>Agosto</th>
+									<th>Septiembre</th>
+									<th>Octubre</th>
+									<th>Noviembre</th>
+									<th>Diciembre</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							</table>		
+
+
 	  					 </div>
 
 	  				</div>
@@ -99,7 +149,67 @@
 									<input type="radio"  name="mostrarp" id="mvde" value="mvepdivori3">
 									<label for="mvde">Mejor Vision MM$ EQV</label>
 							</div>
+							<table id="mejorv2" class="display nowrap" cellspacing="0" width="100%">
+							<thead>
+								<tr> 
+									<th>REAL</th>
+									<th>Elemento</th>
+									<th>Enero</th>
+									<th>Febrero</th>
+									<th>Marzo</th>
+									<th>abril</th>
+									<th>Mayo</th>
+									<th>Junio</th>
+									<th>Julio</th>
+									<th>Agosto</th>
+									<th>Septiembre</th>
+									<th>Octubre</th>
+									<th>Noviembre</th>
+									<th>Diciembre</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							</table>
+
 					</div> 
+					<div id="anthab" class="tabcontent">
+							<div class="radio">
+  									<input type="radio"  name="mostrarp" id="antbs" value="antepdivori1">
+									<label for="antbs">anteproyecto MMBsF</label>
+									<input type="radio"  name="mostrarp" id="antd" value="antepdivori2">
+									<label for="antd">anteproyecto MM$</label>
+									<input type="radio"  name="mostrarp" id="antde" value="antepdivori3">
+									<label for="antde">anteproyecto MM$ EQV</label>
+							</div>
+							<table id="mejorv3" class="display nowrap" cellspacing="0" width="100%">
+							<thead>
+								<tr> 
+									<th>REAL</th>
+									<th>Elemento</th>
+									<th>Enero</th>
+									<th>Febrero</th>
+									<th>Marzo</th>
+									<th>abril</th>
+									<th>Mayo</th>
+									<th>Junio</th>
+									<th>Julio</th>
+									<th>Agosto</th>
+									<th>Septiembre</th>
+									<th>Octubre</th>
+									<th>Noviembre</th>
+									<th>Diciembre</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							</table>
+							
+					</div> 
+
+
 
 
  			
@@ -111,29 +221,7 @@
 
 	<div id="planrealmejorv">
 			
-		<table id="divoriental" class="display nowrap" cellspacing="0" width="100%">
-			<thead>
-				<tr> 
-					<th>REAL</th>
-					<th>Elemento</th>
-					<th>Enero</th>
-					<th>Febrero</th>
-					<th>Marzo</th>
-					<th>abril</th>
-					<th>Mayo</th>
-					<th>Junio</th>
-					<th>Julio</th>
-					<th>Agosto</th>
-					<th>Septiembre</th>
-					<th>Octubre</th>
-					<th>Noviembre</th>
-					<th>Diciembre</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-		</table>
+		
 
 	</div>
 		

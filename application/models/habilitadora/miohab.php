@@ -101,6 +101,14 @@ class Miohab extends CI_Model
 		return $query;
 
 	}
+
+	public function gettipodiv(){
+		$this->db->select('iddiv,descdiv');
+		$this->db->from('tipodiv');
+		$query = $this->db->get();
+		return	$val = $query->result_array();
+
+	}
 	//public function op
 }
 

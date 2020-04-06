@@ -5,7 +5,7 @@
 					<div class="form-proyecto">
 					<form class="form-horizontal" action="<?= base_url()?>cdirejep/postdireccion" method="post">
 							 
-							 <div class="form-group select_container">
+							 <div class="form-group select_container1">
 									
 								<div for="PR" class="select_title">Cargar</div>
 										<select class="select-select" name="PR" id="PR" >
@@ -17,7 +17,7 @@
 										</select>
 								</div>	
 
-								<div class="form-group select_container">
+								<div class="form-group select_container1">
 									
 								<div for="invop" class="select_title">Tipo</div>
 										<select class="select-select" name="invop" id="invop" >
@@ -27,7 +27,7 @@
 										</select>
 								</div>	
 
-							<div class="form-group select_container"  class="col-xs-12">
+							<div class="form-group select_container1"  class="col-xs-12">
 
 										<div for="moneda" class="select_title">Moneda</div>
 
@@ -40,8 +40,8 @@
 							</div>
 
 
-							<div class="form-group select_container" >
-										<div for="anhodir" class="select_title">año</div>		
+							<div class="form-group select_container1" >
+										<div for="anhodir" class="select_title">Año</div>		
 										<select class="select-select" id="anhodir" name="anhodir"  >
 											<option value="">--seleccionar opcion--</option>		
 											<?php for($i=date("Y"); $i >= 2010; $i--){ ?>

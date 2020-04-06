@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-07-2017 a las 21:38:09
+-- Tiempo de generación: 14-07-2017 a las 16:08:37
 -- Versión del servidor: 5.6.25
 -- Versión de PHP: 5.3.29
 
@@ -83,48 +83,7 @@ CREATE TABLE IF NOT EXISTS `direccion` (
   `iddir` int(11) NOT NULL,
   `iddir_iofk` int(11) NOT NULL,
   `idelefk` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `direccion`
---
-
-INSERT INTO `direccion` (`iddir`, `iddir_iofk`, `idelefk`) VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 1, 4),
-(5, 1, 5),
-(6, 1, 1),
-(7, 1, 2),
-(8, 1, 3),
-(9, 1, 4),
-(10, 1, 5),
-(11, 1, 1),
-(12, 1, 2),
-(13, 1, 3),
-(14, 1, 4),
-(15, 1, 5),
-(16, 1, 1),
-(17, 1, 2),
-(18, 1, 3),
-(19, 1, 4),
-(20, 1, 5),
-(21, 1, 1),
-(22, 1, 2),
-(23, 1, 3),
-(24, 1, 4),
-(25, 1, 5),
-(26, 1, 1),
-(27, 1, 2),
-(28, 1, 3),
-(29, 1, 4),
-(30, 1, 5),
-(31, 1, 1),
-(32, 1, 2),
-(33, 1, 3),
-(34, 1, 4),
-(35, 1, 5);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -252,32 +211,6 @@ INSERT INTO `emx` (`idemx`, `emmixta`, `idiv`) VALUES
 (3, 'PETROLERA PARIA', 1),
 (4, 'CARDON IV', 2),
 (5, 'PETROCUMAREBO', 2);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `explicaciones`
---
-
-CREATE TABLE IF NOT EXISTS `explicaciones` (
-  `idexp` int(11) NOT NULL,
-  `enero_ex` varchar(200) NOT NULL,
-  `febrero_ex` varchar(200) NOT NULL,
-  `marzo_ex` varchar(200) NOT NULL,
-  `abril_ex` varchar(200) NOT NULL,
-  `mayo_ex` varchar(200) NOT NULL,
-  `junio_ex` varchar(200) NOT NULL,
-  `julio_ex` varchar(200) NOT NULL,
-  `agosto_ex` varchar(200) NOT NULL,
-  `septiembre_ex` varchar(200) NOT NULL,
-  `octubre_ex` varchar(200) NOT NULL,
-  `noviembre_ex` varchar(200) NOT NULL,
-  `diciembre_ex` varchar(200) NOT NULL,
-  `idproyectofk` int(11) NOT NULL,
-  `idmoneda` int(11) NOT NULL,
-  `idanho` int(11) NOT NULL,
-  `idtipoexp` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -528,25 +461,10 @@ CREATE TABLE IF NOT EXISTS `mejorv` (
   `diciembre_mv` varchar(200) NOT NULL,
   `idmonedafk` int(11) NOT NULL,
   `idprofk` int(11) NOT NULL,
-  `idhabelecfk` int(11) NOT NULL,
+  `idhabfk` int(11) NOT NULL,
   `iddirfk` int(11) NOT NULL,
   `anho` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `mejorv`
---
-
-INSERT INTO `mejorv` (`idmv`, `enero_mv`, `febrero_mv`, `marzo_mv`, `abril_mv`, `mayo_mv`, `junio_mv`, `julio_mv`, `agosto_mv`, `septiembre_mv`, `octubre_mv`, `noviembre_mv`, `diciembre_mv`, `idmonedafk`, `idprofk`, `idhabelecfk`, `iddirfk`, `anho`) VALUES
-(1, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 21, 2017),
-(2, '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 22, 2017),
-(3, '34', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 23, 2017),
-(4, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 24, 2017),
-(5, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 26, 2017),
-(6, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 27, 2017),
-(7, '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 28, 2017),
-(8, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 29, 2017),
-(9, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 30, 2017);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -655,7 +573,7 @@ CREATE TABLE IF NOT EXISTS `plan` (
   `iddirfk` int(11) NOT NULL,
   `idanho` int(11) NOT NULL,
   `tpfk` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `plan`
@@ -740,17 +658,7 @@ INSERT INTO `plan` (`idplan`, `enero_p`, `febrero_p`, `marzo_p`, `abril_p`, `may
 (76, '0', '-36.90594', '-36.90594', '-36.90594', '0', '0', '0', '0', '0', '0', '0', '0', 2, 17, 0, 0, 2017, 0),
 (77, '8995.45103', '26387.28251', '26387.28251', '26387.28251', '0', '0', '0', '0', '0', '0', '0', '0', 2, 19, 0, 0, 2017, 0),
 (78, '24.19438', '24.19438', '46.51113', '46.51113', '0', '0', '0', '0', '0', '0', '0', '0', 2, 21, 0, 0, 2017, 0),
-(79, '73.54056', '73.54056', '73.54056', '73.54056', '0', '0', '0', '0', '0', '0', '0', '0', 2, 42, 0, 0, 2017, 0),
-(82, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 1, 2017, 0),
-(83, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 2, 2017, 0),
-(84, '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 3, 2017, 0),
-(85, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 4, 2017, 0),
-(86, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 5, 2017, 0),
-(87, '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 31, 2017, 0),
-(88, '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 32, 2017, 0),
-(89, '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 33, 2017, 0),
-(90, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 34, 2017, 0),
-(91, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, 0, 0, 35, 2017, 0);
+(79, '73.54056', '73.54056', '73.54056', '73.54056', '0', '0', '0', '0', '0', '0', '0', '0', 2, 42, 0, 0, 2017, 0);
 
 -- --------------------------------------------------------
 
@@ -864,7 +772,7 @@ CREATE TABLE IF NOT EXISTS `reales` (
   `iddirfk` int(11) NOT NULL,
   `idmixta` int(11) NOT NULL,
   `idanho` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `reales`
@@ -974,12 +882,7 @@ INSERT INTO `reales` (`idreal`, `enero_r`, `febrero_r`, `marzo_r`, `abril_r`, `m
 (101, '0', '-36.90594', '-36.90594', '-36.90594', '0', '0', '0', '0', '0', '0', '0', '0', 2, 17, 0, 0, 0, 2017),
 (102, '8995.45103', '26387.28251', '26387.28251', '26387.28251', '0', '0', '0', '0', '0', '0', '0', '0', 2, 19, 0, 0, 0, 2017),
 (103, '24.19438', '24.19438', '46.51113', '46.51113', '0', '0', '0', '0', '0', '0', '0', '0', 2, 21, 0, 0, 0, 2017),
-(104, '73.54056', '73.54056', '73.54056', '73.54056', '0', '0', '0', '0', '0', '0', '0', '0', 2, 42, 0, 0, 0, 2017),
-(110, '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 16, 0, 2017),
-(111, '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 17, 0, 2017),
-(112, '34', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 18, 0, 2017),
-(113, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 19, 0, 2017),
-(114, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 0, 20, 0, 2017);
+(104, '73.54056', '73.54056', '73.54056', '73.54056', '0', '0', '0', '0', '0', '0', '0', '0', 2, 42, 0, 0, 0, 2017);
 
 -- --------------------------------------------------------
 
@@ -1014,25 +917,6 @@ INSERT INTO `tipodiv` (`iddiv`, `descdiv`) VALUES
 (4, 'DTTO ORIENTAL'),
 (5, 'ESFUERZO PROPIO'),
 (6, 'DIRECCION EJECUTIVA COSTA AFUERA');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipoexplicaciones`
---
-
-CREATE TABLE IF NOT EXISTS `tipoexplicaciones` (
-  `idtexp` int(11) NOT NULL,
-  `descripcion` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `tipoexplicaciones`
---
-
-INSERT INTO `tipoexplicaciones` (`idtexp`, `descripcion`) VALUES
-(1, 'PLAN VS REAL '),
-(2, 'REAL VS MEJOR VISION');
 
 -- --------------------------------------------------------
 
@@ -1169,12 +1053,6 @@ ALTER TABLE `elementocosto`
   ADD PRIMARY KEY (`idele`);
 
 --
--- Indices de la tabla `explicaciones`
---
-ALTER TABLE `explicaciones`
-  ADD PRIMARY KEY (`idexp`);
-
---
 -- Indices de la tabla `gerencia`
 --
 ALTER TABLE `gerencia`
@@ -1253,12 +1131,6 @@ ALTER TABLE `tipodiv`
   ADD PRIMARY KEY (`iddiv`);
 
 --
--- Indices de la tabla `tipoexplicaciones`
---
-ALTER TABLE `tipoexplicaciones`
-  ADD PRIMARY KEY (`idtexp`);
-
---
 -- Indices de la tabla `tipoio`
 --
 ALTER TABLE `tipoio`
@@ -1300,7 +1172,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `iddir` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `iddir` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `dir_io`
 --
@@ -1326,11 +1198,6 @@ ALTER TABLE `dom`
 --
 ALTER TABLE `elementocosto`
   MODIFY `idele` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `explicaciones`
---
-ALTER TABLE `explicaciones`
-  MODIFY `idexp` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `gerencia`
 --
@@ -1360,7 +1227,7 @@ ALTER TABLE `habilitadora`
 -- AUTO_INCREMENT de la tabla `mejorv`
 --
 ALTER TABLE `mejorv`
-  MODIFY `idmv` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `idmv` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `mixta`
 --
@@ -1375,7 +1242,7 @@ ALTER TABLE `moneda`
 -- AUTO_INCREMENT de la tabla `plan`
 --
 ALTER TABLE `plan`
-  MODIFY `idplan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=92;
+  MODIFY `idplan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
 --
 -- AUTO_INCREMENT de la tabla `proyecto`
 --
@@ -1385,7 +1252,7 @@ ALTER TABLE `proyecto`
 -- AUTO_INCREMENT de la tabla `reales`
 --
 ALTER TABLE `reales`
-  MODIFY `idreal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
+  MODIFY `idreal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT de la tabla `tasa`
 --
@@ -1396,11 +1263,6 @@ ALTER TABLE `tasa`
 --
 ALTER TABLE `tipodiv`
   MODIFY `iddiv` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT de la tabla `tipoexplicaciones`
---
-ALTER TABLE `tipoexplicaciones`
-  MODIFY `idtexp` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `tipoio`
 --

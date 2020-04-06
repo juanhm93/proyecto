@@ -8,9 +8,11 @@
 	<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?= base_url()?>js/validar.js"></script>
     <script type="text/javascript" src="<?= base_url()?>js/script.js"></script>  
-      <script type="text/javascript" src="<?= base_url()?>js/tabs.js"></script> 
+      <script type="text/javascript" src="<?= base_url()?>js/tabs.js"></script>
+      <script type="text/javascript" src="<?= base_url()?>js/global.js"></script>
+    
        <?php 
-         if ($this->uri->segment(1) == "pro"){
+         if ($this->uri->segment(2) == "cmostrarpep"){
          ?> <script type="text/javascript" src="<?= base_url()?>js/mostrarpro.js"></script>
         <?php
          }   
@@ -49,6 +51,42 @@
          ?><script type="text/javascript" src="<?= base_url()?>js/epdivoriental.js"></script>
          <?php
          }   
+        ?>
+         <?php
+        if ($this->uri->segment(1) == "cexplicaciones"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/explicaciones.js"></script>
+         <?php
+         }   
+        ?>
+         <?php
+        if ($this->uri->segment(1) == "cepdivoccidental"){
+         ?><script type="text/javascript" src="<?= base_url()?>js/epdivoccidental.js"></script>
+         <?php
+         }  
+          if ($this->uri->segment(1) == "cmixtas"){ 
+        ?><script type="text/javascript" src="<?= base_url()?>js/mixtasinsert.js"></script>
+        <?php
+        }
+        if ($this->uri->segment(1) == "cempetrosucre"){ 
+        ?><script type="text/javascript" src="<?= base_url()?>js/empetrosucre.js"></script>
+        <?php
+        }
+         if ($this->uri->segment(2) == "cproyecto"){ 
+        ?><script type="text/javascript" src="<?= base_url()?>js/nuevoproyecto.js"></script>
+        <?php
+        }
+        if ($this->uri->segment(1) == "cdepca"){ 
+        ?><script type="text/javascript" src="<?= base_url()?>js/depca.js"></script>
+        <?php
+        }
+        if ($this->uri->segment(1) == "cdivoriental"){ 
+        ?><script type="text/javascript" src="<?= base_url()?>js/divoriental.js"></script>
+        <?php
+        }
+        if ($this->uri->segment(1) == "cdivocciental"){ 
+        ?><script type="text/javascript" src="<?= base_url()?>js/divoccidental.js"></script>
+        <?php
+        }
         ?>
 	<script language="javascript" type="text/javascript">  
 
@@ -105,68 +143,6 @@ $(window).resize(function() {
 
 //////////////////////////////////////////////////////////////
 
-$('#dom').change(function(){
-
-    if($(this).val() == 1){
-
-       $.ajax({
-        type:"POST",
-        url:"<?= base_url()?>/ajax/cmostarm/dom",
-        dateType:"json",
-        success: function(dom){
-
-            var datos = $.parseJSON(dom);
-
-                var opc = datos[0]['num'];
-               
-
-                var informacion = "<div for='divi' class='select_title'>asignado </div>";
-                    informacion += "<select class='select-select' name='divi' id='divi' required >";
-                    informacion += " <option value=''>--seleccione opcion--</option>";
-                    for (var i = 0; i < opc; i++) {
-                    informacion +=  " <option value="+datos[i]['iddi']+">"+datos[i]['divisonopc']+"</option>";
-                    }
-                    informacion += "</select>";    
-                    informacion +="</div>";        
-         
-            $('#resultado').html('');
-            $('#resultado').append(informacion);
-    
-            }
-       }); 
-    }// fin if el value es 1 
-
-    if($(this).val() == 2){
-        $.ajax({
-        type:"POST",
-        url:"<?= base_url()?>/ajax/cmostarm/emx",
-        dateType:"json",
-        success: function(dom){
-
-            var datos = $.parseJSON(dom);
-
-                var opc = datos[0]['num'];
-               
-
-                var informacion = "<div for='emx' class='select_title'>asignado </div>";
-                    informacion += "<select class='select-select' name='emx' id='emx' required >";
-                    informacion += " <option value=''>--seleccione opcion--</option>";
-                    for (var i = 0; i < opc; i++) {
-                    informacion +=  " <option value="+datos[i]['idemx']+">"+datos[i]['emmixta']+"</option>";
-                    }
-                    informacion += "</select>";    
-                    informacion +="</div>";        
-            $('#resultado').html('');
-            $('#resultado').append(informacion);
-    
-            }
-       }); 
-
-    
-    }
-       
-});
-
 //If parent option is changed
 $("#mesinicio").change(function() {
         var parent = $(this).val(); //get option value from parent
@@ -208,7 +184,7 @@ $('#mesfin').change(function(){
 
 });
 
-
+/*
 
 $("#dom").change(function(){
 
@@ -225,7 +201,7 @@ $("#dom").change(function(){
          $("#divisionpro").hide();
         $("#emxpro").show();
     }
-});
+});*/
 
 
 $("#anhop").change(function(){
@@ -427,77 +403,35 @@ $('#anhohab').change(function(){
                             informacion += "<tbody>"; 
                             informacion += "<tr>"; 
                             informacion += "<td>Labor</td>"; 
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
+                            for (var i = 0 ; i < 12 ; i++) {
+                                informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";  
+                            }
                             informacion += "</tr>";
                             informacion += "<tr>";
                             informacion += "<td>Bienestar y Beneficio</td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
+                            for (var i = 0 ; i < 12 ; i++) {
+                                informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
+
+                            }
                             informacion += "</tr>";
                             informacion += "<tr>";
                             informacion += "<td>Materiales</td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td></tr>";
+                             for (var i = 0 ; i < 12 ; i++) {
+                                informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
+                             }
+                            informacion+= "</tr>";
                             informacion += "<tr>";
                             informacion += "<td>Servicios y Contratos</td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
+                             for (var i = 0 ; i < 12 ; i++) {
+                                  informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
+                             }
                             informacion += "</tr>";
                             informacion += "<tr>";
                             informacion += "<td>Otros</td>";
+                            for (var i = 0 ; i < 12 ; i++) {
                             informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>";
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                            informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
+                            }
+                             
                             informacion += "</tr>";
                             informacion += "</tbody>";
                             informacion += "</table>";
@@ -623,267 +557,6 @@ $('#anhohab').change(function(){
 
 });
 
-
-
-$('#anho').change(function(){
-        var em = $("#empresam option:selected");
-    var mone = $("#moneda option:selected");
-    var anho = $("#anho option:selected");
-
-    if(em.val() != '' &&  mone.val() != '' && anho.val() !=''){
-
-                  var v1, v2, v3;
-                    v1 = em.val();
-                    v2 = mone.val();
-                    v3 = anho.val();
-
-                    var postForm = {
-                        'v1' : v1,
-                        'v2' : v2,
-                        'v3' : v3
-                    };
- 
-
-                $.ajax({
-                        type:"POST",
-                        url:"<?= base_url()?>/ajax/cmostarm/ajaxm",
-                        //url:"localhost/proyecto/ajax/cmostarm/ajaxm.php",
-                        data:  postForm,
-                        dateType:"json",
-                        success: function(res){
-                            alert(res.length);
-                            /*var datos = $.parseJSON(res);
-                            alert(datos[4]['idlele']);
-                            alert(datos[4]['enero_r']);
-                            */
-                            //var datos = JSON.stringify(res);
-                            //alert(datos);
-                            //alert(res);
-                            //$.each(datos, function(index, value){
-                              //  $('#tablamixta').append("index= "+index+", data= "+value+"<br>");
-                            //});
-                            //$('#tablamixta').html('');
-                        if(res.length < 4)
-                        {	
-                        	var informacion = "<table id='example' class='display nowrap' cellspacing='0' width='100%'> ";
-                        	informacion +="<thead>";
-                        	informacion +="<tr>";
-                        	informacion +="<th colspan='13' align='center'>real</th>";
-                        	informacion +="</tr>";
-                        	informacion +="<tr>";
-                        	informacion +="<th></th>";
-                        	informacion += "<th>Enero</th>";
-                        	informacion += "<th>Febrero</th>";
-                        	informacion += "<th>Marzo</th>"; 
-                        	informacion += "<th>abril</th>"; 
-                        	informacion += "<th>Mayo</th>"; 
-                        	informacion += "<th>Junio</th>"; 
-                        	informacion += "<th>Julio</th>"; 
-                        	informacion += "<th>Agosto</th>"; 
-                        	informacion += "<th>Septiembre</th>"; 
-                        	informacion += "<th>Octubre</th>"; 
-                        	informacion += "<th>Noviembre</th>"; 
-                        	informacion += "<th>Diciembre</th>"; 
-                        	informacion += "</tr>"; 
-                        	informacion += "</thead>"; 
-                        	informacion += "<tbody>"; 
-                        	informacion += "<tr>"; 
-                        	informacion += "<td>Labor</td>"; 
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='0'></td>";
-                        	informacion += "</tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Bienestar y Beneficio</td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='0'></td>";
-                        	informacion += "</tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Materiales</td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='0'></td></tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Servicios y Contratos</td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='0'></td>";
-                        	informacion += "</tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Otros</td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='0'></td>"; 
-                        	informacion += "</tr>";
-                        	informacion += "</tbody>";
-                        	informacion += "</table>";
-                        	$("#tablamixta").html('');
-                            $("#tablamixta").append(informacion);  
-                   
-                        }
-                        else
-                        {
-                            var datos = $.parseJSON(res);
-                            alert(datos[4]['idlele']);
-                            alert(datos[4]['enero_r']);
-                            
-
-                            var informacion = "<table id='example' class='display nowrap' cellspacing='0' width='100%'> ";
-                        	informacion +="<thead>";
-                        	informacion +="<tr>";
-                        	informacion +="<tr>";
-                        	informacion +="<td></td>";
-                        	informacion +="<td colspan='12' align='center'>real</td>";
-                        	informacion +="</tr>";
-                        	informacion +="<tr>";
-                        	informacion +="<td></td>";
-                        	informacion += "<td>Enero</td>";
-                        	informacion += "<td>Febrero</td>";
-                        	informacion += "<td>Marzo</td>"; 
-                        	informacion += "<td>abril</td>"; 
-                        	informacion += "<td>Mayo</td>"; 
-                        	informacion += "<td>Junio</td>"; 
-                        	informacion += "<td>Julio</td>"; 
-                        	informacion += "<td>Agosto</td>"; 
-                        	informacion += "<td>Septiembre</td>"; 
-                        	informacion += "<td>Octubre</td>"; 
-                        	informacion += "<td>Noviembre</td>"; 
-                        	informacion += "<td>Diciembre</td>"; 
-                        	informacion += "</tr>"; 
-                        	informacion += "</thead>"; 
-                        	informacion += "<tbody>"; 
-                        	informacion += "<tr>"; 
-                        	informacion += "<td>Labor</td>"; 
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['enero_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['febrero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['marzo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['abril_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['mayo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['junio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['julio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['agosto_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['septiembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['octubre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['noviembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='l1[]' id='l1' value='"+datos[0]['diciembre_r']+"'></td>";
-                        	informacion += "</tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Bienestar y Beneficio</td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['enero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['febrero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['marzo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['abril_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['mayo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['junio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['julio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['agosto_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['septiembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['octubre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['noviembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='bb[]' value='"+datos[1]['diciembre_r']+"'></td>";
-                        	informacion += "</tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Materiales</td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['enero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['febrero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['marzo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['abril_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['mayo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['junio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['julio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['agosto_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['septiembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['octubre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['noviembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='m1[]' value='"+datos[2]['diciembre_r']+"'></td></tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Servicios y Contratos</td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['enero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['febrero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['marzo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['abril_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['mayo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['junio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['julio_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['agosto_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['septiembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['octubre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['noviembre_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='sc[]' value='"+datos[3]['diciembre_r']+"'></td>";
-                        	informacion += "</tr>";
-                        	informacion += "<tr>";
-                        	informacion += "<td>Otros</td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['enero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['febrero_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['marzo_r']+"'></td>";
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['abril_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['mayo_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['junio_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['julio_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['agosto_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['septiembre_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['octubre_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['noviembre_r']+"'></td>"; 
-                        	informacion += "<td><input type='number' step='any' name='o1[]' value='"+datos[4]['diciembre_r']+"'></td>"; 
-                        	informacion += "</tr>";
-                        	informacion += "</tbody>";
-                        	informacion += "</table>";
-                            $("#tablamixta").html('');
-                            $("#tablamixta").append(informacion);  
-                        }
-                    }
-
-                });
-    }
-
-
-});
 
 //function to populate child select box
 function list(array_list)

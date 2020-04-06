@@ -1,7 +1,13 @@
 <div class="Contenedor-Editable" id="Region-Editable">
 						
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
-							<h4>Habilitadoras Gestion Inversion esfuerzo propios</h4>
+							 
+
+							<span class="Titulo-Aplicacion">Habilitadora</span>
+						<span class="Separador_Modulo"></span>
+						<span class="Sub-Titulo-Aplicacion">Gestion inversion</span>
+						<span class="Sub-Titulo-Texto"> Resumen</span>
+						<div style="height: 70px;"></div>
 								<div class="form-group select_container" >
 											<div for="anhogestinv" class="select_title">año</div>		
 											<select class="select-select" id="anhogestinv" name="anhogestinv"  >
@@ -65,33 +71,27 @@
 
  
 						</div>
-						
-						<table id="r2" class="display nowrap" cellspacing="0" width="100%">
-								<thead>
-									<tr> 
-										<th>HAB</th>
-										<th>DESCRIPCION</th>
-										<th>ENE</th>
-										<th>FEB</th>
-										<th>MAR</th>
-										<th>ABR</th>
-										<th>MAY</th>
-										<th>JUN</th>
-										<th>JUL</th>
-										<th>AGO</th>
-										<th>SEP</th>
-										<th>OCT</th>
-										<th>NOV</th>
-										<th>DIC</th>
-									</tr>
-								</thead>
-									<tbody>
 
-											
-									</tbody>
-								</table>					 
-							
+					<div id="otro" style="overflow-y: auto; height: 500px;"  class='Tabla-Aplicacion'>
 
+						<div class="Tabla-fondo" >
+	 					<div class="Tabla-Elemento-Encabezado">var</div>
+						<div class="Tabla-Elemento-Encabezado">Total</div>
+						<div class="Tabla-Elemento-Encabezado">ENE </div>		
+						<div class="Tabla-Elemento-Encabezado"> FEB</div>
+						<div class="Tabla-Elemento-Encabezado">MAR </div>
+						<div class="Tabla-Elemento-Encabezado">ABR</div>
+						<div class="Tabla-Elemento-Encabezado">MAY</div>
+						<div class="Tabla-Elemento-Encabezado">JUN</div>
+						<div class="Tabla-Elemento-Encabezado"></div>
+						<div class="Tabla-Elemento-Encabezado">JUL</div>
+						<div class="Tabla-Elemento-Encabezado">AGO</div>
+						<div class="Tabla-Elemento-Encabezado">SEP</div>
+						<div class="Tabla-Elemento-Encabezado">OCT</div>
+						<div class="Tabla-Elemento-Encabezado">NOV</div>
+						<div class="Tabla-Elemento-Encabezado">DIC</div>
+						</div>
+					</div>
 							
  
 					</div>

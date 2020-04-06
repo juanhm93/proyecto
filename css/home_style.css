@@ -1,11 +1,11 @@
-.Contenedor, .Contenedor-con-Bordes, .Contenedor-con-sombra, .Contenedor-con-Imagen, .Contenedor-Texto-Menu, .Contenedor-Texto-sub-Menu, .Contenedor-Fondo-Calendario, .Contenedor-Semana, .Contenedor-Seleccion, select , .Texto-Semana, .Texto-Dia, .Dias-Semana, .Texto-Dia-aux, .Titulo-Aplicacion, #Nombre-Aplicacion, .Separador_Modulo, .Sub-Titulo-Aplicacion, .Sub-Titulo-Formulario-aux, .Sub-Titulo-Formulario, .Sub-Titulo-Formulario-aux, .Sub-Titulo-Formulario, .Sub-Titulo-Texto, .Lista-Aplicacion , .Lista-Fondo-Oscuro, .Lista-Fondo-Claro, .Lista-Elemento-Claro-primero, .Lista-Elemento-Claro-segundo, .Lista-Elemento-Claro-tercero, .Lista-Elemento-Oscuro-primero, .Lista-Elemento-Oscuro-segundo, .Lista-Elemento-Oscuro-tercero, .Contenedor-Formulario, .Titulo-Formulario, .Principio-Boton, .Final-Boton, .Boton-Calendario, .Contenedor-Table, .Tabla-Aplicacion , .Tabla-Fondo, .Tabla-Elemento, .Tabla-Elemento-Encabezado, .Contenedor-Elemneto-Formulario, #Main-breadcrumbs, #Main-Traza , #Main-Traza-aux, #Main-Logo
+.Contenedor, .Contenedor-con-Bordes, .Contenedor-con-sombra, .Contenedor-con-Imagen, .Contenedor-Texto-Menu, .Contenedor-Texto-sub-Menu, .Contenedor-Fondo-Calendario, .Contenedor-Semana, .Contenedor-Seleccion, select , .Texto-Semana, .Texto-Dia, .Dias-Semana, .Texto-Dia-aux, .Titulo-Aplicacion, #Nombre-Aplicacion, .Separador_Modulo, .Sub-Titulo-Aplicacion, .Sub-Titulo-Formulario-aux, .Sub-Titulo-Formulario, .Sub-Titulo-Formulario-aux, .Sub-Titulo-Formulario, .Sub-Titulo-Texto, .Lista-Aplicacion , .Lista-Fondo-Oscuro, .Lista-Fondo-Claro, .Lista-Elemento-Claro-primero, .Lista-Elemento-Claro-segundo, .Lista-Elemento-Claro-tercero, .Lista-Elemento-Oscuro-primero, .Lista-Elemento-Oscuro-segundo, .Lista-Elemento-Oscuro-tercero, .Contenedor-Formulario, .Titulo-Formulario, .Principio-Boton, .Final-Boton, .Boton-Calendario, .Contenedor-Table, .Tabla-Aplicacion,.Tabla-Aplicacion1 , .Tabla-Fondo,.Tabla-Fondo1, .Tabla-Elemento,.Tabla-Elemento1, .Tabla-Elemento-Encabezado, .Tabla-Elemento-Encabezado1, .Contenedor-Elemneto-Formulario, #Main-breadcrumbs, #Main-Traza , #Main-Traza-aux, #Main-Logo
 {
     border-style:none;
     padding:0px;
 	margin: 0px;
 
 }
-.Texto-Identificador,  .Contenedor-Editable, .Contenedor-Editable-Fondo, .Fondo-puntoVe, .PuntoHo_Cortico, .Contenedor-Texto-sub-Menu,.Contenedor-Texto-Menu, .Contenedor-Fondo-Calendario, .Contenedor-Semana, .Contenedor-Seleccion, select, .Texto-Semana, .Texto-Dia, .Dias-Semana, .Texto-Dia-aux, .Titulo-Aplicacion, .Separador_Modulo , .Sub-Titulo-Aplicacion, .Sub-Titulo-Formulario, .Sub-Titulo-Texto, .Lista-Aplicacion, .Lista-Fondo-Oscuro, .Lista-Fondo-Claro, .Lista-Elemento-Claro-primero, .Lista-Elemento-Claro-segundo, .Lista-Elemento-Claro-tercero, .Lista-Elemento-Oscuro-primero, .Lista-Elemento-Oscuro-segundo, .Lista-Elemento-Oscuro-tercero, .Contenedor-Formulario, .Titulo-Formulario, .Principio-Boton, .Final-Boton, .Boton-Calendario, .Contenedor-Table, .Tabla-Aplicacion , .Tabla-Fondo,.Tabla-Elemento, .Tabla-Elemento-Encabezado, #Main-Traza , #Main-Traza-aux, #Main-Logo
+.Texto-Identificador,  .Contenedor-Editable, .Contenedor-Editable-Fondo, .Fondo-puntoVe, .PuntoHo_Cortico, .Contenedor-Texto-sub-Menu,.Contenedor-Texto-Menu, .Contenedor-Fondo-Calendario, .Contenedor-Semana, .Contenedor-Seleccion, select, .Texto-Semana, .Texto-Dia, .Dias-Semana, .Texto-Dia-aux, .Titulo-Aplicacion, .Separador_Modulo , .Sub-Titulo-Aplicacion, .Sub-Titulo-Formulario, .Sub-Titulo-Texto, .Lista-Aplicacion, .Lista-Fondo-Oscuro, .Lista-Fondo-Claro, .Lista-Elemento-Claro-primero, .Lista-Elemento-Claro-segundo, .Lista-Elemento-Claro-tercero, .Lista-Elemento-Oscuro-primero, .Lista-Elemento-Oscuro-segundo, .Lista-Elemento-Oscuro-tercero, .Contenedor-Formulario, .Titulo-Formulario, .Principio-Boton, .Final-Boton, .Boton-Calendario, .Contenedor-Table, .Tabla-Aplicacion, .Tabla-Aplicacion1 , .Tabla-Fondo,.Tabla-Fondo1,.Tabla-Elemento,.Tabla-Elemento1, .Tabla-Elemento-Encabezado,.Tabla-Elemento-Encabezado1, #Main-Traza , #Main-Traza-aux, #Main-Logo
 {
     float:left;
     background-repeat:no-repeat;
@@ -38,7 +38,7 @@
 }
 .Contenedor-Editable-Fondo
 {
-   background-image:url(img/fondo.png);
+  /* background-image:url(img/fondo.png);*/
    background-repeat: repeat-y;
    margin:-7px 0px 0px 0px;
 }
@@ -155,7 +155,7 @@ DIV#Menu-auxiliar-superior
 }
 DIV#Region-Editable
 {
-      width:595px;
+      width:765px;
 	  margin:0px 0px 15px 15px;
 }
 
@@ -544,36 +544,134 @@ DIV#Logo-Final
 {
   background-color:#999999;
 }
+/*** AQUI EMPEZAMOS A TRABAJAR MAÑANA*****/
 .Tabla-Aplicacion , .Tabla-Fondo
 {
-    width:570px;
+    width:765px;
     margin:15px 0px 0px 0px;
     border-color:#FFFFFF;
 }
 .Tabla-Fondo
 {
-   height:20px;
-   width:570px;
+   height:40px;
+   width:1740px;
    margin:0px 0px 1px 0px;
-}
-.Tabla-Elemento, .Tabla-Elemento-Encabezado
+} 
+
+.Tabla-Elemento
 {
-   height:17px;
-   width:170px;
+   height:39px;
+   width:100px;
    font-size:12px;
    background-color:#E8E8E8;
    margin:0px 1px 0px 0px;
    padding:3px 0px 0px 10px;
 }
+ 
+ .Tabla-Elemento-Encabezado{
+  height:42px;
+   width:100px;
+   font-size:12px;
+   background-color:#E8E8E8;
+   margin:0px 1px 0px 0px;
+   padding:3px 0px 0px 10px;
+
+ }
+
+
+
 .Tabla-Elemento-Encabezado
 {
-   width:180px;
+   width:100px;
+   background-color:#999999;
+   text-align:center;
+   color:#FFFFFF;
+   padding:3px 0px 0px 0px;
+}
+/******************************/
+/*estilo para ver si lo toma la tabla*/
+ 
+.Tabla-Aplicacion1 , .Tabla-Fondo1
+{
+    width:765px;
+    margin:15px 0px 0px 0px;
+    border-color:#FFFFFF;
+}
+.Tabla-Fondo1
+{
+   height:70px;
+   width:1430px;
+   margin:0px 0px 1px 0px;
+} 
+
+.Tabla-Elemento1
+{
+   height:70px;
+   width:100px;
+   font-size:12px;
+   background-color:#E8E8E8;
+   margin:0px 1px 0px 0px;
+   padding:3px 0px 0px 10px;
+}
+ 
+ .Tabla-Elemento-Encabezado1{
+  height:70px;
+   width:100px;
+   font-size:12px;
+   background-color:#E8E8E8;
+   margin:0px 1px 0px 0px;
+   padding:3px 0px 0px 10px;
+
+ }
+
+.Tabla-Elemento-Encabezado1
+{
+   width:100px;
    background-color:#999999;
    text-align:center;
    color:#FFFFFF;
    padding:3px 0px 0px 0px;
 }
 
+
+/**********************************/
+/***********texarea ******/
+.estilotextarea {width:240px;border: 2px solid #990000;} 
+
+
+
+.Tabla-Elemento-valor, .Tabla-Elemento-Encabezado-valores
+{
+   height:40px;
+   width:200px;
+   font-size:12px;
+   background-color:#E8E8E8;
+   margin:0px 1px 0px 0px;
+   padding:3px 0px 0px 10px;
+}
+
+.Tabla-Elemento-Encabezado-valores
+{  
+   
+   width:200px;
+   background-color:red;
+   text-align:center;
+   color:#FFFFFF;
+   padding:3px 0px 0px 0px;
+}
+
+.Tabla-Elemento-Encabezado-desc
+{  
+     
+   width:200px;
+   background-color:#999999;
+   text-align:center;
+   color:#FFFFFF;
+   padding:3px 0px 0px 0px;
+}
+
+
+/**********************/
 
 /***************************
   * Desde aqui trabajamos  *
@@ -710,7 +808,7 @@ DIV#Logo-Final
 
   .form-proyecto .form-control{
     width: 100%;
-    margin-left: 35px;
+    /*margin-left: 35px;*/
   }
 
   .form-proyecto select {
@@ -736,12 +834,12 @@ DIV#Logo-Final
 
 
 
-/* input para archivos adjunto */
+/* input para archivos adjunto 
 
 input {
 
   margin-left: 10px;
-}
+}*/
 
 input .btn .btn-danger, .navbar-btn,#esfuerzoP{
 
@@ -751,10 +849,10 @@ input .btn .btn-danger, .navbar-btn,#esfuerzoP{
 
 }
 
-.form-control{
+/*.form-control{
   width: 85%;
-  margin-left: 35px;  
-}
+  /*margin-left: 35px;   
+}*/
 
 
 
@@ -796,7 +894,7 @@ input .btn .btn-danger, .navbar-btn,#esfuerzoP{
   }
   .form-proyectoem .form-check{
 
-    margin-left: 25px;
+  /*  margin-left: 25px;*/
   }
 
   .form-proyectoem small{
@@ -805,7 +903,7 @@ input .btn .btn-danger, .navbar-btn,#esfuerzoP{
   }
 
   .form-proyectoem .form-control{
-    width: 80%;
+   /* width: 80%;*/
 
   }
   
@@ -866,21 +964,39 @@ input .btn .btn-danger, .navbar-btn,#esfuerzoP{
     /*border: 1px dashed red;*/
     display: inline-block;
     margin: 0px !important;
-    margin-left: 35px;
+    margin-left: 10px;
     /*float: left;*/
     padding: 10px;
   }
-
-
   .select_container .select-select{
     margin: 0px;
     padding: 0px;
     width: 100%;
-    margin-left: 33px;
+   /* margin-left: 33px;*/
+    border-radius: 5px;
+    min-height: 38px;
+}
+
+  .select_container1{
+    width: 50%;
+    /*border: 1px dashed red;*/
+    display: inline-block;
+    margin: 0px !important;
+    margin-left: 10px;
+    float: left;
+    padding: 10px;
+
+  }
+  .select_container1 .select-select{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+   /* margin-left: 33px;*/
     border-radius: 5px;
     min-height: 38px;
 
   }
+
 
   .select_container-block{
     display: block;
@@ -888,7 +1004,7 @@ input .btn .btn-danger, .navbar-btn,#esfuerzoP{
   }
 
   .select_title{
-     margin-left: 33px;
+    /*  margin-left: 33px;*/
     font-weight: 100;
     color: black;
     opacity: .7;

@@ -134,7 +134,7 @@ class Cdirejep extends CI_Controller
 
 
 
-		$resultado = $this->mdireccion->getdirplan($tip,$mon,$anh);
+		$resultado = $this->mdireccion->getdirant($tip,$mon,$anh);
 
 
 
@@ -144,19 +144,20 @@ class Cdirejep extends CI_Controller
 
 		foreach ($resultado->result() as $value) {
 
-			$arr[$i]['idlele'] = $value->idlele;
-			$arr[$i]['enero_a'] = $value->enero_a; 
-			$arr[$i]['febrero_a']=$value->febrero_a; 
-			$arr[$i]['marzo_a']=$value->marzo_a; 
-			$arr[$i]['abril_a']=$value->abril_a; 
-			$arr[$i]['mayo_a']=$value->mayo_a; 
-			$arr[$i]['junio_a']=$value->junio_a; 
-			$arr[$i]['julio_a']=$value->julio_a; 
-			$arr[$i]['agosto_a']=$value->agosto_a; 
-			$arr[$i]['septiembre_a']=$value->septiembre_a; 
-			$arr[$i]['octubre_a']=$value->octubre_a;				 
-			$arr[$i]['noviembre_a']=$value->noviembre_a; 
-			$arr[$i]['diciembre_a']=$value->diciembre_a;
+			$arr[$i]['iddirfk'] = $value->iddirfk;
+			$arr[$i]['elemento'] = $value->elemento;
+			$arr[$i]['enero_ant'] = $value->enero_ant; 
+			$arr[$i]['febrero_ant']=$value->febrero_ant; 
+			$arr[$i]['marzo_ant']=$value->marzo_ant; 
+			$arr[$i]['abril_ant']=$value->abril_ant; 
+			$arr[$i]['mayo_ant']=$value->mayo_ant; 
+			$arr[$i]['junio_ant']=$value->junio_ant; 
+			$arr[$i]['julio_ant']=$value->julio_ant; 
+			$arr[$i]['agosto_ant']=$value->agosto_ant; 
+			$arr[$i]['septiembre_ant']=$value->septiembre_ant; 
+			$arr[$i]['octubre_ant']=$value->octubre_ant;				 
+			$arr[$i]['noviembre_ant']=$value->noviembre_ant; 
+			$arr[$i]['diciembre_ant']=$value->diciembre_ant;
 			$i++;
 		}
 		echo json_encode($arr);

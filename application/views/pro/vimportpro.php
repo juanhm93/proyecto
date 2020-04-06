@@ -1,14 +1,18 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<h2>Importar Proyectos</h2>
-						<div class="form-completa">
-							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
+					<span class="Titulo-Aplicacion">Proyecto</span>
+					<span class="Separador_Modulo"></span>
+					<span class="Sub-Titulo-Aplicacion">Importar proyectos</span>
+					<span class="Sub-Titulo-Texto">Esta opcion carga las caracteristicas que pertenece al proyecto segun su especificación en el formato</span>
+					<div style="height: 70px;"></div>
+						<div class="form-rango">
+							 
 							<form name="import" method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>exceldatainsert/cprocarga">
 
  
-								<div class="form-group select_container">
-									
-								<input type="file" name="excel" style="margin-left: 33px;" > 
+								<div class="form-group select_container">	
+								<input type="file" name="excel"   > 
 								</div>
+
 								<div class="form-group select_container">
 									<input class="btn btn-danger navbar-btn" id="esfuerzoP" type="submit" name="submit" value="importar">							
 								</div>
@@ -17,9 +21,5 @@
 							</form>
 
 						</div>
-					<!--	<div class="form-mensaje">
-							<div class="alert alert-success" role="alert">
-							  <p><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>   La tabla mostrada es <strong>Preliminar</strong></p>
-							</div>
-						</div>-->
+				 
 					</div>

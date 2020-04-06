@@ -2,16 +2,11 @@
 
 class Excel_data_insert_model extends CI_Model {
  
-    public function  __construct() {
+   		 public function  __construct() {
         parent::__construct();
         
-    }
+    	}
 	
-/*public function Add_User($data_user){
-
-$this->db->insert('user', $data_user);
-
-   }*/
    		public function gerencia($g){
 
    			$this->db->insert('gerencia',$g);
@@ -34,6 +29,10 @@ $this->db->insert('user', $data_user);
 
 		 	$this->db->insert('mejorv',$mvvar);
 		 }
+		 public function anteproyecto($ante){
+		 	$this->db->insert('anteproyecto',$ante);	
+		 }
+
 		 public function realesupdate($id,$reales){
 
 		 	$this->db->where('idproyecto',$id);
@@ -47,7 +46,10 @@ $this->db->insert('user', $data_user);
 
 		 public function habilitador($hab){
 
-		 	$this->db->insert('habilitadora',$hab);
+		 	if($this->db->insert('habilitadora',$hab)){
+		 		return true;
+		 	}
+
 		 }
 		  public function udphabilitador($id,$hab){
 
@@ -82,7 +84,11 @@ $this->db->insert('user', $data_user);
 		  	$this->db->where('idmv',$id);
 		 	$this->db->update('mejorv',$mejorv);
 		 }
+		 public function updateante($id,$ante){
 
+		  	$this->db->where('idante',$id);
+		 	$this->db->update('anteproyecto',$ante);
+		 }
 
 	
 }

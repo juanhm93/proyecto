@@ -1,11 +1,15 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<h2>Importar Datos de Proyecto</h2>
-						<div class="form-proyecto">
+					<span class="Titulo-Aplicacion">Proyecto</span>
+					<span class="Separador_Modulo"></span>
+					<span class="Sub-Titulo-Aplicacion">Importar Anual</span>
+					<span class="Sub-Titulo-Texto">Esta opcion carga todo el año de ejecucion de Plan y Real</span>
+					<div style="height: 70px;"></div>
+						<div class="form-completa">
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
 							<form name="import" id="formulariohabilitadora" method="post" enctype="multipart/form-data" action="<?= base_url()?>exceldatainsert/importprodb">
 								
 								<div class="form-group select_container" >
-											<div for="anhopro" class="select_title">año</div>		
+											<div for="anhopro" class="select_title">Año</div>		
 											<select class="select-select" id="anhopro" name="anhopro" required >
 												<option value="">--seleccionar opcion--</option>		
 												<?php for($i=date("Y"); $i >= 2010; $i--){ ?>
@@ -17,7 +21,7 @@
 								<div class="form-group select_container">
 									
 								<div for="PR" class="select_title">Importacion</div>
-										<select class="select-select" name="PR" id="PR" >
+										<select class="select-select" name="PR" id="PR" required>
 										  <option value="">--seleccionar Opcion--</option>
 										  <option value="1">Plan</option>
 										  <option value="2">Real</option>

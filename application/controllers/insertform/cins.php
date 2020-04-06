@@ -15,7 +15,9 @@ class Cins extends CI_controller
 		$this->load->model('get_id');
 		$this->load->model('excel_data_insert_model');
 		$this->load->model('memproyecto');
-		$this->load->model('mupdatemix');	
+		$this->load->model('mupdatemix');
+		$this->load->model('mvalidar');	
+		$this->load->model('habilitadora/miohab');
 
 	}
 
@@ -23,37 +25,154 @@ class Cins extends CI_controller
 
 		$ghab =	$this->input->post('habilitadora');
 		$siglas = $this->input->post('siglashab');
-		$tipo = $this->input->post('chekea');
+		$tipo = $this->input->post('checkea');
+		$div = $this->input->post('tipodiv');
 
-		$tipo[0];
-		$tipo[1];
+		$var =0;
+		$var1=0;
+		$valghab = $this->mvalidar->valgerehab($ghab);
+		$valsiglas = $this->mvalidar->valsiglashab($siglas);
 
-		$gerencia = array('siglas' => $siglas,
-						'gerehab' => $ghab );
 
+		if($tipo[0] == '1'){
 
-		if($this->mcargando->hab($gerencia)){
-						 
-
-		 	$gere =  $this->get_id->getmax_number_gere();
+			if($valghab->num_rows() > 0){
 
 			 ?><script>
-				window.alert('Se ha guardado una habilitadora correctamente');
-				window.location= '<?= base_url()?>home';
+				window.alert('Existe una habilitadora con las siglas ingresadas, no se puede guardar');
+				window.location= '<?= base_url()?>complemento/chabil';
 			</script>
 			<?php
 
+
 		}else{
 
-			?><script>
-				window.alert('la habilitadora no puede ser registrada');
+			if ($valsiglas->num_rows() > 0) {
+
+					?><script>
+					window.alert('Existe una habilitadora con el nombre ingresado, no se puede guardar');
+					window.location= '<?= base_url()?>complemento/chabil';
+					</script>
+					<?php
+
+				
+			}else{
+
+
+				$gerencia = array('siglas' => $siglas,
+						'gerehab' => $ghab );
+
+
+				if($this->mcargando->hab($gerencia)){
+						 
+				$gereID  = $this->get_id->getmax_number_gere();
+				$j = $this->miohab->inv($gereID,1);
+				$j = $j+1;
+				$valor = "HI";	
+				$aux = "$valor-$siglas$j";
+						  $hab = array('idgerencia' => $gereID,
+					'descriphab' => $aux,
+					'idtipo_IO' => 1,
+					'tipodivfk' =>   $div);
+
+						if($this->excel_data_insert_model->habilitador($hab)){
+							 $var1 = 1;
+
+						} else{
+
+							$var1 = 0;
+
+						}
+
+				}
+
+
+			}
+
+
+		}//fin else num rows valgehab
+
+
+
+
+			
+
+
+		}// fin del tipo[] == 1
+
+		if($tipo[1] == '2'){
+
+			if($valghab->num_rows() > 0){
+
+			 ?><script>
+				window.alert('Existe una habilitadora con las siglas ingresadas, no se puede guardar');
 				window.location= '<?= base_url()?>complemento/chabil';
 			</script>
-			<?php	
+			<?php
 
+
+		}else{
+
+			if ($valsiglas->num_rows() > 0) {
+
+					?><script>
+					window.alert('Existe una habilitadora con el nombre ingresado, no se puede guardar');
+					window.location= '<?= base_url()?>complemento/chabil';
+					</script>
+					<?php
+
+				
+			}else{
+
+
+				$gerencia = array('siglas' => $siglas,
+						'gerehab' => $ghab );
+
+
+				if($this->mcargando->hab($gerencia)){
+						 
+				$gereID  = $this->get_id->getmax_number_gere();
+				$j = $this->miohab->inv($gereID,2);
+				$j = $j+1;
+				$valor = "HO";	
+				$aux = "$valor-$siglas$j";
+						  $hab = array('idgerencia' => $gereID,
+					'descriphab' => $aux,
+					'idtipo_IO' => 2,
+					'tipodivfk' =>   $div);
+
+						if($this->excel_data_insert_model->habilitador($hab)){
+							$var = 1;
+
+						} else{
+
+							$var = 0;
+						}
+
+				}	
+
+			}// fin else sligas 
+
+		}//fin else num rows valgehab
+	}// fin del tipo[] == 2		
+ 	
+ 	if($var== 1 || $var1 == 1){
+							?><script>
+							window.alert('Se ha guardado una habilitadora correctamente');
+							window.location= '<?= base_url()?>complemento/chabil';
+							</script>
+							<?php
+
+		}else{
+
+						?><script>
+						window.alert('la habilitadora no puede ser registrada');
+						window.location= '<?= base_url()?>complemento/chabil';
+						</script>
+						<?php	
 		}
-
-	}
+		
+}
 
 	public function insertdiv(){
 
@@ -146,23 +265,61 @@ class Cins extends CI_controller
 		$cat = array('numcategoria'=> $numero,
 				'descripcion'=>$categoria);
 
-		if($this->mcargando->categoria($cat)){
-			 
+		$valnum = $this->mvalidar->valnumcategoria($numero);
+
+		$valcat = $this->mvalidar->valdescripcion($categoria);
+
+		var_dump($valnum->num_rows());
+		var_dump($valcat->num_rows());
+
+
+		if($valnum->num_rows() > 0){
+
 			 ?><script>
-				window.alert('Se ha guardado una categoria correctamente');
-				window.location= '<?= base_url()?>home';
+				window.alert('Existe una categoria con ese numero, no se puede guardar');
+				window.location= '<?= base_url()?>complemento/ccategoria';
 			</script>
 			<?php
 
 		}else{
 
-			?><script>
-				window.alert('La categoria no puede ser registrada');
-				window.location= '<?= base_url()?>complemento/categoria';
-			</script>
-			<?php	
+			if($valcat->num_rows() > 0 ){
+
+				 ?><script>
+				window.alert('Existe una categoria con esa descripcion, no se puede guardar');
+				window.location= '<?= base_url()?>complemento/ccategoria';
+				</script>
+				<?php
+
+
+			}else{
+
+					if($this->mcargando->categoria($cat)){
+			 
+						?><script>
+						window.alert('Se ha guardado una categoria correctamente');
+						window.location= '<?= base_url()?>complemento/ccategoria';
+						</script>
+						<?php
+
+					}else{
+
+						?><script>
+						window.alert('La categoria no puede ser registrada');
+						window.location= '<?= base_url()?>complemento/ccategoria';
+						</script>
+						<?php	
+
+					}
+
+
+
+			}
+
 
 		}
+
+		
 
 
 
@@ -173,24 +330,42 @@ class Cins extends CI_controller
 			
 		$gereproyecto = array('gp' => $this->input->post('gerepro'));
 
-		if($this->mcargando->gerepro($gereproyecto)){
-			 
+
+
+		$valgerep = $this->mvalidar->valgerepro($gereproyecto);
+
+		if($valgerep->num_rows() > 0){
+
 			 ?><script>
-				window.alert('Se ha guardado gerencia de proyecto correctamente');
-				window.location= '<?= base_url()?>home';
+				window.alert('Existe una gerencia de proyecto con esas descripcion');
+				window.location= '<?= base_url()?>complemento/cgereproyecto';
 			</script>
 			<?php
 
+
 		}else{
+					if($this->mcargando->gerepro($gereproyecto)){
 
-			?><script>
-				window.alert('la gerencia no puede ser registrada');
-				window.location= '<?= base_url()?>complemento/cgereproyecto';
-			</script>
-			<?php	
+						?><script>
+						window.alert('Se ha guardado gerencia de proyecto correctamente');
+						window.location= '<?= base_url()?>complemento/cgereproyecto';
+						</script>
+					<?php
 
-		}
-		//aqui es que se redirecciona para la vista de la preferencia
+					}else{
+
+						?><script>
+						window.alert('la gerencia no puede ser registrada');
+						window.location= '<?= base_url()?>complemento/cgereproyecto';
+						</script>
+						<?php	
+
+					}
+					//aqui es que se redirecciona para la vista de la preferencia
+
+		}// fin else num rows
+
+		
 
 	}
 

@@ -1,11 +1,17 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<h2>Importar Gerencias Habilitadoras</h2>
+					 
+
+					<span class="Titulo-Aplicacion">Habilitadora</span>
+					<span class="Separador_Modulo"></span>
+					<span class="Sub-Titulo-Aplicacion">Importar Gerencias habilitadoras</span>
+					<span class="Sub-Titulo-Texto">Seleccione el formato creado</span>
+					<div style="height: 70px;"></div>		
 						<div class="form-rango">
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
 							<form name="import" method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>exceldatainsert/importgere">
 								<div class="form-group select_container">
 									
-								<input type="file" name="excel" style="margin-left: 33px;" > 
+								<input type="file" name="excel" style="margin-left: 33px;" required> 
 								</div>
 								<div class="form-group select_container">
 									<input class="btn btn-danger navbar-btn" id="esfuerzoP" type="submit" name="submit" value="enviar">							

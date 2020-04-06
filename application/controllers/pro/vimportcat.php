@@ -1,6 +1,11 @@
 <div class="Contenedor-Editable" id="Region-Editable">
-						<h2>Importar categoria</h2>
-						<div class="form-completa">
+					 
+					<span class="Titulo-Aplicacion">CATEGORIA</span>
+					<span class="Separador_Modulo"></span>
+					<span class="Sub-Titulo-Aplicacion">Importar Categoria</span>
+					<span class="Sub-Titulo-Texto">Agregar archivo adjunto </span>
+					<div style="height: 70px;"></div>	
+						<div class="form-rango">
 							<!-- TODO: Validar rango de meses ascendente (No: Junio-Febrero, Si: Febrero-Junio) -->
 							<form name="import" method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>exceldatainsert/ccatcarga">
 

@@ -164,7 +164,7 @@ ORDER BY habelec.idelecfk
 	 public function ginvmv($an,$m,$inv){
 	 $this->db->select('g.gerehab,hab.tipodivfk,h.idelecfk,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv');	
 	 $this->db->from('mejorv mv');
-	 $this->db->join('habelec h','mv.idhabfk=h.idhabelec');
+	 $this->db->join('habelec h','mv.idhabelecfk=h.idhabelec');
 	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
 	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
 	 $this->db->where('mv.anho',$an);
@@ -186,6 +186,37 @@ ORDER BY habelec.idelecfk
 	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
 	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
 	 $this->db->where('mv.anho',$an);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+	 }
+
+	  public function ginvant($an,$m,$inv){
+	 $this->db->select('g.gerehab,hab.tipodivfk,h.idelecfk,a.enero_ant,a.febrero_ant,a.marzo_ant,a.abril_ant,a.mayo_ant,a.junio_ant,a.julio_ant,a.agosto_ant,a.septiembre_ant,a.octubre_ant,a.noviembre_ant,a.diciembre_ant');	
+	 $this->db->from('anteproyecto a');
+	 $this->db->join('habelec h','a.idhabfk=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('a.anho',$an);
+	 $this->db->where('a.idmonedafk',$m);
+	 $this->db->where('hab.idtipo_IO',$inv);
+	 $this->db->order_by('idelecfk');
+	 return $this->db->get(); 
+
+
+
+	 }
+
+	 	 // CONSULTA HABILITADORAS  MEJOR VISION EQUIVALENTE 
+	 public function ginvantequiv($an,$inv){
+
+	 $this->db->select('a.idmonedafk,g.gerehab,hab.tipodivfk,h.idelecfk,a.enero_ant,a.febrero_ant,a.marzo_ant,a.abril_ant,a.mayo_ant,a.junio_ant,a.julio_ant,a.agosto_ant,a.septiembre_ant,a.octubre_ant,a.noviembre_ant,a.diciembre_ant');	
+	 $this->db->from('anteproyecto a');
+	 $this->db->join('habelec h','a.idhabfk=h.idhabelec');
+	 $this->db->join('habilitadora hab','h.idhabfk= hab.idhab');
+	 $this->db->join('gerencia g','hab.idgerencia = g.idgere');
+	 $this->db->where('a.anho',$an);
 	 $this->db->where('hab.idtipo_IO',$inv);
 	 $this->db->order_by('idelecfk');
 	 return $this->db->get(); 
@@ -273,6 +304,48 @@ ORDER BY habelec.idelecfk
 	 	return $this->db->get();
 
 	}
+
+	public function mixtap($an){
+
+		$this->db->select('p.idmoneda,m.idem,m.idlele,e.emmixta,p.enero_p,p.febrero_p,p.marzo_p,p.abril_p,p.mayo_p,p.junio_p,p.julio_p,p.agosto_p,p.septiembre_p,p.octubre_p,p.noviembre_p,p.diciembre_p');
+	 	$this->db->from('plan p');
+	 	$this->db->join('mixta m','m.idmixta = p.idmixtafk');
+	 	$this->db->join('emx e','e.idemx = m.idem');
+	 	$this->db->where('p.idanho',$an);
+	 	return $this->db->get();
+	}
+
+	public function mixtar($an){
+
+		$this->db->select('r.idmoneda,m.idem,m.idlele,e.emmixta,r.enero_r,r.febrero_r,r.marzo_r,r.abril_r,r.mayo_r,r.junio_r,r.julio_r,r.agosto_r,r.septiembre_r,r.octubre_r,r.noviembre_r,r.diciembre_r');
+	 	$this->db->from('reales r');
+	 	$this->db->join('mixta m','m.idmixta = r.idmixta');
+	 	$this->db->join('emx e','e.idemx = m.idem');
+	 	$this->db->where('r.idanho',$an);
+	 	return $this->db->get();
+	}
+
+		public function mixtamv($an){
+
+		$this->db->select('mv.idmonedafk,m.idem,m.idlele,e.emmixta,mv.enero_mv,mv.febrero_mv,mv.marzo_mv,mv.abril_mv,mv.mayo_mv,mv.junio_mv,mv.julio_mv,mv.agosto_mv,mv.septiembre_mv,mv.octubre_mv,mv.noviembre_mv,mv.diciembre_mv');
+	 	$this->db->from('mejorv mv');
+	 	$this->db->join('mixta m','m.idmixta = mv.idmixtafk');
+	 	$this->db->join('emx e','e.idemx = m.idem');
+	 	$this->db->where('mv.anho',$an);
+	 	return $this->db->get();
+	}
+
+		public function mixtant($an){
+
+		$this->db->select('a.idmonedafk,m.idem,m.idlele,e.emmixta,a.enero_ant,a.febrero_ant,a.marzo_ant,a.abril_ant,a.mayo_ant,a.junio_ant,a.julio_ant,a.agosto_ant,a.septiembre_ant,a.octubre_ant,a.noviembre_ant,a.diciembre_ant');
+	 	$this->db->from('anteproyecto a');
+	 	$this->db->join('mixta m','m.idmixta = a.idmixtafk');
+	 	$this->db->join('emx e','e.idemx = m.idem');
+	 	$this->db->where('a.anho',$an);
+	 	return $this->db->get();
+	}
+
+
 
 
 

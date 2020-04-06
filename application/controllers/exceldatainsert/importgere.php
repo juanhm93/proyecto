@@ -117,8 +117,7 @@ class Importgere extends CI_Controller
                             $valor = "HI";	
                             $aux = "$valor-$siglas$j";
                             echo 'descripcion de  habilitadora'.$aux.'<br>';
-                            $div = $this->miohab->getiddiv($tipodiv);
-                            //echo $div->iddiv;
+                           
                              $div = $this->miohab->getiddiv($tipodiv);
                              foreach ($div->result() as  $value) {
                              	  $hab = array('idgerencia' => $gereID,
